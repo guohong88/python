@@ -10,7 +10,7 @@
 # 数据结构
 [数据结构](https://guohong88.github.io/python/DataStructures/)  
 # 前端
-[数据结构](https://guohong88.github.io/python/Css_js_html/)
+[css_js_html](https://guohong88.github.io/python/Css_js_html/)
 # 数据库
   [Mongo](https://guohong88.github.io/python/Datbase/Mongo/)  
   [MySQL](https://guohong88.github.io/python/Datbase/MySQL/)  

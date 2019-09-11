@@ -1,6 +1,6 @@
 # python
-[python高级](https://guohong88.github.io/python/python_HighLevel/html）
-https://guohong88.github.io/python/DataStructures/
+[python高级](https://guohong88.github.io/python/python_HighLevel/html)
+[数据结构](https://guohong88.github.io/python/DataStructures/)
 https://guohong88.github.io/python/Datbase/Mongo/
 https://guohong88.github.io/python/Datbase/MySQL/
 https://guohong88.github.io/python/Datbase/Redis/

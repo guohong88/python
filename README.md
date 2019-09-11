@@ -1,5 +1,4 @@
-# python
-# python学习历程
+# python学习历程笔记
 # python基础
 [python基础](https://guohong88.github.io/python/Pythonbasic/)
 # python高级

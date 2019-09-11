@@ -12,4 +12,4 @@ os.system(command)，在一个子shell中运行command命令，并返回command�
 ## git使用
 [pycharm git 用法总结](https://www.cnblogs.com/xxtalhr/p/11154137.html)  
 [pycharm git 解决冲突总结](https://blog.csdn.net/weixin_42174361/article/details/81265547)
-测试计划
+测试计划 test

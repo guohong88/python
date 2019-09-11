@@ -1,12 +1,12 @@
-# python
+# python学习历程
 # python基础
 [python基础](https://guohong88.github.io/python/Pythonbasic/)
 # python高级
-[python高级语法](https://guohong88.github.io/python_HighLevel/html/python-Courseware/)
-[正则表达式](https://guohong88.github.io/python/python_HighLevel/html/RegExp)  
-[多进程_多线程](https://guohong88.github.io/python/python_HighLevel/html/System/)
-[webServer](https://guohong88.github.io/python_HighLevel/html/webServer/) 
-[Soket](https://guohong88.github.io/python_HighLevel/html/Soket/) 
+[python高级语法](https://guohong88.github.io/python_HighLevel/html/python-Courseware/)  
+[正则表达式](https://guohong88.github.io/python/python_HighLevel/html/RegExp)    
+[多进程_多线程](https://guohong88.github.io/python/python_HighLevel/html/System/)  
+[webServer](https://guohong88.github.io/python_HighLevel/html/webServer/)   
+[Soket](https://guohong88.github.io/python_HighLevel/html/Soket/)   
 # 数据结构
 [数据结构](https://guohong88.github.io/python/DataStructures/) 
 # 数据库

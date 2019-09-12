@@ -1,0 +1,109 @@
+*** Settings ***
+Suite Setup       登录
+Suite Teardown    退出
+Library           Selenium2Library
+Resource          ../关键字.txt
+
+*** Test Cases ***
+目录树重命名
+    [Setup]
+    ChooseBmmRule
+    ${character }    character
+    ${gettime}    gettime
+    ${flag}    flag    xpath=//*[@id="treeDemo_2_span"]
+    Run Keyword If    ${flag}==False    Run Keywords    Sleep    3
+    ...    AND    Click Element    //*[@id="left-menu"]/div/div[1]/div[1]/span[1]
+    ...    AND    Sleep    2
+    ...    AND    Input Text    //*[@id="mainBody"]/div[1]/div/div/div[2]/table/tbody/tr[1]/td[3]/input    ${gettime}
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //*[@id="addZTree_1_span"]
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //*[@id="mainBody"]/div[1]/div/div/div[3]/button[1]
+    ...    AND    Sleep    2
+    : FOR    ${i}    IN RANGE    0    99
+    \    Click Element    //*[@id="treeDemo_2_span"]
+    \    Sleep    3
+    \    ${flag}    flag    //*[@id="ruleModelTab.id"]/div[1]/table/tbody/tr[1]/td[2]/a
+    \    Run Keyword If    ${flag}==True    Run Keywords    Click Element    //*[@id="ruleModelTab.id"]/div/table/tbody/tr/td[8]/span/a
+    \    ...    AND    Sleep    3
+    \    ...    AND    Click Element    //*[@id="addZTree_1_span"]
+    \    ...    AND    Sleep    2
+    \    ...    AND    Click Element    //*[@id="contentArea"]/div/div[3]/button[1]
+    \    ...    AND    Sleep    2
+    \    Run Keyword If    ${flag}==False    Exit For Loop
+    Sleep    2
+    Right Click Element    //*[@id="treeDemo_2_span"]
+    Sleep    2
+    Click Element    //*[@id="m_edit"]
+    Sleep    2
+    : FOR    ${i}    IN RANGE    0    3
+    \    Clear Element Text    //*[@id="mainBody"]/div[1]/div/div/div[2]/table/tbody/tr[1]/td[3]/input
+    \    Sleep    1
+    \    Input Text    //*[@id="mainBody"]/div[1]/div/div/div[2]/table/tbody/tr[1]/td[3]/input    ${character[${i}] }
+    \    Click Element    //*[@id="mainBody"]/div[1]/div/div/div[3]/button[1]
+    \    Sleep    2
+    Clear Element Text    //*[@id="mainBody"]/div[1]/div/div/div[2]/table/tbody/tr[1]/td[3]/input
+    Input Text    //*[@id="mainBody"]/div[1]/div/div/div[2]/table/tbody/tr[1]/td[3]/input    update${gettime}
+    Click Element    //*[@id="mainBody"]/div[1]/div/div/div[3]/button[1]
+    ${language}    changelanguage
+    Run Keyword If    ${language}==1    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div[1]/div/span    Directory renamed    10
+    ...    ELSE IF    ${language}==0    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div[1]/div/span    目录重命名
+    ...    10
+    [Teardown]
+
+目录树新建目录
+    ${gettime}    gettime
+    ChooseBmmRule
+    Sleep    2
+    Right Click Element    //*[@id="treeDemo_2_span"]
+    Sleep    2
+    Click Element    //*[@id="m_add"]
+    Sleep    2
+    Input Text    //*[@id="mainBody"]/div[1]/div/div/div[2]/table/tbody/tr[1]/td[3]/input    ${gettime}
+    Click Element    //*[@id="mainBody"]/div[1]/div/div/div[3]/button[1]
+    ${language}    changelanguage
+    Run Keyword If    ${language}==1    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div/div/span    created successfully    10
+    ...    ELSE IF    ${language}==0    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div/div/span    新建目录
+    ...    10
+    [Teardown]
+
+目录树新建规则
+    [Setup]
+    ${gettime}    关键字.gettime
+    ChooseBmmRule
+    Sleep    2
+    Right Click Element    //*[@id="treeDemo_2_span"]
+    Sleep    2
+    Click Element    //*[@id="c_add"]/span
+    creatRule    update${gettime}    False
+
+目录树删除目录
+    ChooseBmmRule
+    Sleep    2
+    Right Click Element    //*[@id="treeDemo_2_span"]
+    Sleep    2
+    Click Element    //*[@id="m_del"]
+    Sleep    2
+    Click Element    //*[@id="mainBody"]/div[1]/div/div/div[3]/button[1]
+    ${language}    changelanguage
+    Run Keyword If    ${language}==1    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div[1]/div/span    Unable    10
+    ...    ELSE IF    ${language}==0    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div[1]/div/span    无法删除目录
+    ...    10
+    Sleep    2
+    Click Element    //*[@id="treeDemo_2_span"]
+    Sleep    2
+    Click Element    //*[@id="ruleModelTab.id"]/div/table/thead/tr/th[1]/label/span
+    Sleep    2
+    Click Element    //*[@id="indicatorList"]/div[1]/div[1]/button[2]
+    Sleep    2
+    Click Element    //*[@id="mainBody"]/div[1]/div/div/div[3]/div[1]/span/button/span
+    Sleep    2
+    Right Click Element    //*[@id="treeDemo_2_span"]
+    Sleep    2
+    Click Element    //*[@id="m_del"]
+    Sleep    2
+    Click Element    //*[@id="mainBody"]/div[1]/div/div/div[3]/button[1]
+    ${language}    changelanguage
+    Run Keyword If    ${language}==1    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div[1]/div/span    successfully    10
+    ...    ELSE IF    ${language}==0    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div[1]/div/span    成功
+    ...    10

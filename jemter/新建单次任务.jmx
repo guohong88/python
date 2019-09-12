@@ -1,0 +1,62 @@
+*** Settings ***
+Suite Setup
+Suite Teardown
+Library           Selenium2Library
+Resource          ../关键字.txt
+
+*** Test Cases ***
+单次调度dli连接
+    [Setup]    登录
+    ${gettime}    关键字.gettime
+    chooseBmmMetric
+    CreatMetric    dlitest${gettime}    test1    SELECT a.name FROM dlg.dlg_datasource a WHERE a.ds_type="DLI" and a.project_id="3adf48bad33342a4a2257cdeead814f9" order by a.create_time ASC LIMIT 1
+    mysql-update    UPDATE dlg.t_dlg_bmm_metrics a set a.exe_sql="select count(1) from table1" where a.name='dlitest${gettime}'
+    ChooseBmmRule
+    Click Element    //*[@id="indicatorList"]/div[1]/div[1]/button[1]
+    Sleep    2
+    creatRule    dlitest${gettime}    True
+    ChooseBmmBusiness
+    CreatBusiness    dlitest${gettime}    0
+    [Teardown]    退出
+
+单次调度dws连接
+    [Setup]    登录
+    ${gettime}    关键字.gettime
+    chooseBmmMetric
+    CreatMetric    dwstest${gettime}    postgres    SELECT a.name FROM dlg.dlg_datasource a WHERE a.ds_type="DWS" and a.project_id="3adf48bad33342a4a2257cdeead814f9" order by a.create_time ASC LIMIT 1
+    mysql-update    UPDATE dlg.t_dlg_bmm_metrics a set a.exe_sql="select count(1) from pressure.dwspressure123 " where a.name='dwstest${gettime}'
+    ChooseBmmRule
+    Click Element    //*[@id="indicatorList"]/div[1]/div[1]/button[1]
+    Sleep    2
+    creatRule    dwstest${gettime}    True
+    ChooseBmmBusiness
+    CreatBusiness    dwstest${gettime}    0
+    [Teardown]    退出
+
+单次调度hive连接
+    [Setup]    登录
+    ${gettime}    关键字.gettime
+    chooseBmmMetric
+    CreatMetric    hivetest${gettime}    default    SELECT a.name FROM dlg.dlg_datasource a WHERE a.ds_type="HIVE" and a.project_id="3adf48bad33342a4a2257cdeead814f9" order by a.create_time ASC LIMIT 1
+    mysql-update    UPDATE dlg.t_dlg_bmm_metrics a set a.exe_sql="select count(1) from hivetest" where a.name='hivetest${gettime}'
+    ChooseBmmRule
+    Click Element    //*[@id="indicatorList"]/div[1]/div[1]/button[1]
+    Sleep    2
+    creatRule    hivetest${gettime}    True
+    ChooseBmmBusiness
+    CreatBusiness    hivetest${gettime}    0
+    [Teardown]    退出
+
+单次调度mysql连接
+    [Setup]    登录
+    ${gettime}    关键字.gettime
+    chooseBmmMetric
+    CreatMetric    mysqltest${gettime}    pressure    SELECT a.name FROM dlg.dlg_datasource a WHERE a.ds_type="MySql" and a.project_id="3adf48bad33342a4a2257cdeead814f9" order by a.create_time ASC LIMIT 1
+    mysql-update    UPDATE dlg.t_dlg_bmm_metrics a set a.exe_sql="select count(1) from pressure001" where a.name='mysqltest${gettime}'
+    ChooseBmmRule
+    Click Element    //*[@id="indicatorList"]/div[1]/div[1]/button[1]
+    Sleep    2
+    creatRule    mysqltest${gettime}    True
+    ChooseBmmBusiness
+    CreatBusiness    mysqltest${gettime}    0
+    [Teardown]    退出

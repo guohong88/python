@@ -1,5 +1,6 @@
 # jmeter学习
-[官方手册](http://jmeter.apache.org/usermanual/index.html)    
+[官方手册](http://jmeter.apache.org/usermanual/index.html)
+[官方 Controller](http://jmeter.apache.org/usermanual/component_reference.html#)
 [官方demo](https://jmeter.apache.org/demos/)  
 ## 1.1 If Controller使用  
 [If Controller](https://www.jianshu.com/p/1e7a60ae49d1)  
@@ -15,3 +16,10 @@ If Controller之下的请求才会受到If控制器的约束，若是平级则�
   
 依从以上规则，填写到Expression输入框中的的内容，样式如：${__groovy("${FE_user}" == "test003",)}  
 [wenzhang](https://blog.csdn.net/wx19900503/article/details/79206382)  
+## 1.1 While Controller使用  
+[官方控制器使用](http://jmeter.apache.org/usermanual/component_reference.html#)
+eg:
+${VAR} - where VAR is set to false by some other test element  
+${__javaScript(${C}==10)}  
+${__javaScript("${VAR2}"=="abcd")}  
+${_P(property)} - where property is set to "false" somewhere else  

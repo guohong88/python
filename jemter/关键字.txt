@@ -1,0 +1,495 @@
+*** Settings ***
+Library           Selenium2Library
+Library           DateTime
+Library           DatabaseLibrary
+
+*** Variables ***
+
+*** Keywords ***
+登录
+    Open Browser    https://console.ulanqab.huawei.com/dayu2/?region=cn-north-7#/index    chrome
+    Maximize Browser Window
+    Sleep    2
+    Input Text    xpath=//*[@id="userNameId"]/input    ei_dlg_w00448499
+    Input Text    xpath=//*[@id="pwdId"]/input    Huawei@123
+    Sleep    3
+    Click Element    id=btn_submit
+    Sleep    4
+    Click Element    xpath=//*[@id="model.nextBind"]/div/span
+    Sleep    4
+    ${language}    changelanguage
+    Run Keyword If    ${language}==1    Run Keywords    Click Element    css=span.console-footer-btn-margin-left-23
+    ...    AND    Sleep    1
+    ...    AND    Click Element    css=a.console-footer-btn-dropdown-padding-left-23
+    ...    AND    Sleep    1
+    #goto    https://console.ulanqab.huawei.com/dayu4/?region=cn-north-7#/index
+    ChooseBMM
+    [Return]    ${language}
+
+退出
+    Close Browser
+
+ChooseBMM
+    Wait Until Page Contains Element    xpath=//div[text()="数据质量" or text()="Data Quality"]    10
+    Sleep    2
+    Click Element    xpath=//div[text()="数据质量" or text()="Data Quality"]
+    Sleep    6
+
+chooseBmmMetric
+    Wait Until Page Contains Element    //div[text()=" 指标管理" or text()=" Metric Management"]    10
+    Sleep    2
+    Click Element    //div[text()=" 指标管理" or text()=" Metric Management"]
+    Sleep    4
+
+ChooseBmmRule
+    Wait Until Page Contains Element    //div[text()=" 规则管理" or text()=" Rule Management"]    10
+    Sleep    2
+    Click Element    //div[text()=" 规则管理" or text()=" Rule Management"]
+    Sleep    4
+
+ChooseBmmBusiness
+    Wait Until Page Contains Element    //div[text()=" 业务场景管理" or text()=" Service Scenario Management"]    10
+    Sleep    2
+    Click Element    //div[text()=" 业务场景管理" or text()=" Service Scenario Management"]
+    Wait Until Page Contains Element    //*[@id="businessTab.id"]/div[2]/table/tbody/tr[1]/td[2]/a    10
+    Sleep    4
+
+CreatMetric
+    [Arguments]    ${taskname}    ${databasename}    ${Data Connection SQL}
+    Click Element    //*[@id="indicatorList"]/div[1]/div[1]/button
+    Sleep    10
+    Input Text    //*[@id="editMetricConfig"]/table/tbody/tr[1]/td[3]/input    ${taskname}
+    Sleep    1
+    Click Element    //*[@id="editMetricConfig"]/table/tbody/tr[2]/td[3]/div[1]/div/div
+    Sleep    2
+    ${dbname}    mysql    ${Data Connection SQL}
+    Input Text    //*[@id="mainBody"]/div[5]/div/div/div/input    ${dbname[0][0]}
+    Sleep    2
+    Click Element    //span[text()="${dbname[0][0]}"]
+    Sleep    2
+    Click Element    //*[@id="dataClub"]/div/div/div
+    Sleep    2
+    Input Text    //*[@id="mainBody"]/div[6]/div/div/div/input    ${databasename}
+    Sleep    2
+    Click Element    //*[@id="mainBody"]/div[6]/ul/li/span
+    Sleep    2
+    Input Text    //*[@id="editMetricConfig"]/table/tbody/tr[3]/td[3]/div/textarea    ${taskname}
+    Sleep    2
+    Click Element    //*[@id="editMetricConfig"]/table/tbody/tr[5]/td[3]/div/div/div
+    Sleep    1
+    Click Element    //*[@id="mainBody"]/div[7]/ul/li
+    Mouse Down    //*[@id="contentArea"]/div/div[3]/button[1]
+    Sleep    1
+    Click Element    //*[@id="contentArea"]/div/div[3]/button[1]
+    ${language}    changelanguage
+    Run Keyword If    ${language}==1    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div/div/span    successfully    10
+    ...    ELSE IF    ${language}==0    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div/div/span    成功
+    ...    10
+
+creatRule
+    [Arguments]    ${taskname}    ${search}    # 是否通过搜索框搜索指标True或者False
+    ${expression}    expression
+    Sleep    2
+    Input Text    //*[@id="editRuleConfig"]/table/tbody/tr[1]/td[3]/input    ${taskname}
+    Input Text    //*[@id="editRuleConfig"]/table/tbody/tr[2]/td[3]/div/textarea    ${taskname}
+    Mouse Down    //*[@id="contentArea"]/div/div[3]/button[1]
+    Click Element    //*[@id="_btn"]
+    Sleep    3
+    Run Keyword If    ${search}==True    Run Keywords    Input Text    //*[@id="mainBody"]/div[5]/div/div/div/input    ${taskname}
+    ...    AND    Sleep    4
+    ...    AND    Click Element    //span[text()="${taskname}"]
+    ...    AND    Sleep    2
+    Run Keyword If    ${search}==False    Run Keywords    Click Element    //*[@id="mainBody"]/div[5]/ul/li[1]/span
+    ...    AND    Sleep    2
+    ${number}    Evaluate    random.randint(0,5)    random
+    Execute Javascript    document.getElementById("editable-content").innerHTML="a${expression[${number}]}1"
+    Sleep    1
+    Click Element    //*[@id="contentArea"]/div/div[3]/button[1]
+    ${language}    changelanguage
+    Run Keyword If    ${language}==1    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div/div/span    successfully    10
+    ...    ELSE IF    ${language}==0    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div/div/span    成功
+    ...    10
+
+CreatBusiness
+    [Arguments]    ${taskname}    ${Scheduling Mode}    # ${Scheduling Mode}调度模式0单次调度，1周期调度
+    Click Element    //*[@id="businessTab.id"]/div[1]/div[1]/button[1]
+    Sleep    5
+    Input Text    //*[@id="step1"]/div/table/tbody/tr[1]/td[3]/input    ${taskname}
+    Input Text    //*[@id="step1"]/div/table/tbody/tr[2]/td[3]/div/textarea    ${taskname}
+    Click Element    //*[@id="_input"]
+    Sleep    2
+    servicelevel
+    Click Element    //*[@id="service-content"]/div[2]/div[4]/button[2]
+    Sleep    4
+    Click Element    //*[@id="step2"]/div/table/tbody/tr[1]/td[3]/table/tbody/tr/td[2]/div/div/div
+    Sleep    2
+    Input Text    //*[@class="ti-dropdown-container ng-isolate-scope ti-dropdown-container-down"]/div/div/div/input    ${taskname}
+    Sleep    3
+    Click Element    //span[text()="${taskname}"]
+    Sleep    1
+    Execute Javascript    document.getElementById("rule").innerHTML="A"
+    Click Element    //*[@id="service-content"]/div[2]/div[4]/button[3]
+    Sleep    4
+    Click Element    //*[@id="step3"]/div/table/tbody/tr[2]/td[3]/div/label[2]/span
+    Sleep    2
+    Click Element    //*[@id="step3"]/div/table/tbody/tr[3]/td[3]/div/div/div
+    Sleep    2
+    Click Element    //span[text()="yy"]
+    Click Element    //*[@id="service-content"]/div[2]/div[4]/button[3]
+    Sleep    4
+    ${number}    Evaluate    random.randint(1,4)    random
+    Run Keyword If    ${Scheduling Mode}==0    Run Keyword    Sleep    1
+    Run Keyword If    ${Scheduling Mode}==1    Run Keywords    Click Element    //*[@id="step4"]/div/table/tbody/tr[1]/td[3]/div[2]/label/span
+    ...    AND    Sleep    4
+    ...    AND    Click Element    //div[text()="分钟" or text()="小时" or text()="天" or text()="周" or text()="Minute" or text()="Hour" or text()="Day" or text()="Week"]
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //*[@id="mainBody"]/div[13]/ul/li[${number}]/span
+    ...    AND    Sleep    1
+    Run Keyword If    ${number}==1 and ${Scheduling Mode}==1    Run Keywords    Click Element    //*[@id="step4"]/div/table/tbody/tr[5]/td[3]/div
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //span[text()="30"]
+    ...    AND    Sleep    1
+    Run Keyword If    ${number}==2 and ${Scheduling Mode}==1    Run Keyword    Sleep    1
+    Run Keyword If    ${number}==3 and ${Scheduling Mode}==1    Run Keywords    Click Element    //*[@id="step4"]/div/table/tbody/tr[4]/td[3]/div
+    ...    AND    Sleep    4
+    ...    AND    Click Element    //span[text()="23"]
+    ...    AND    Sleep    1
+    Run Keyword If    ${number}==4 and ${Scheduling Mode}==1    Run Keywords    Click Element    //*[@id="step4"]/div/table/tbody/tr[2]/td[3]/label/span
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //*[@id="step4"]/div/table/tbody/tr[5]/td[3]/div
+    ...    AND    Click Element    //*[@id="mainBody"]/div[9]/ul/li[2]/label
+    ...    AND    Sleep    1
+    ...    AND    Click Element    //*[@id="mainBody"]/div[9]/ul/li[3]/label
+    ...    AND    Sleep    1
+    ...    AND    Click Element    //*[@id="mainBody"]/div[9]/ul/li[4]/label
+    ...    AND    Sleep    1
+    ...    AND    Click Element    //*[@id="mainBody"]/div[9]/ul/li[5]/label
+    ...    AND    Sleep    1
+    ...    AND    Click Element    //*[@id="mainBody"]/div[9]/ul/li[6]/label
+    ...    AND    Sleep    1
+    ...    AND    Click Element    //*[@id="mainBody"]/div[9]/ul/li[7]/label
+    ...    AND    Sleep    1
+    Click Element    //*[@id="service-content"]/div[2]/div[4]/button[3]
+    ${language}    changelanguage
+    Run Keyword If    ${language}==1    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div/div/span    successfully    10
+    ...    ELSE IF    ${language}==0    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div/div/span    成功
+    ...    10
+
+gettime
+    ${gettime}    Get Current Date    result_format=%Y%m%d%H%M%S
+    [Return]    ${gettime}
+
+character
+    ${character}    Create List    ~    !    @    %    ^
+    ...    &    /    -    +    =    |
+    ...    '    ?    <    >    ;    :
+    ...    $    dsfhjhj@~!@#$$$===~~_+__#_))$))$____$$$$$Jhhjfdjf的回复的计划分解的身份。。》》d    \#
+    [Return]    ${character}
+
+flag
+    [Arguments]    ${xpath}
+    ${flag}    Run Keyword And Return Status    Page Should Contain Element    ${xpath}
+    [Return]    ${flag}
+
+expression
+    ${expression}    Create List    =    <    >    ≤    ≥
+    ...    ≠
+    [Return]    ${expression}
+
+mysql
+    [Arguments]    ${sql}
+    DatabaseLibrary.Connect To Database    pymysql    dlg    dlg    Dlg@123456    100.95.157.221    20005
+    ${sqlresult}    query    ${sql}
+    Disconnect From Database
+    [Return]    ${sqlresult}
+
+mysql-update
+    [Arguments]    ${sql}
+    DatabaseLibrary.Connect To Database    pymysql    dlg    dlg    Dlg@123456    100.95.157.221    20005
+    Execute Sql String    ${sql}
+    Disconnect From Database
+
+servicelevel
+    ${number}    Evaluate    random.randint(1,4)    random
+    Click Element    css=div.ti-dropdown-container.ng-isolate-scope.ti-dropdown-container-down>ul>li:nth-child(${number})
+    Sleep    2
+
+rulerelationship
+    ${relationship}    Create List    a+b    a    a=    a>    a%0=1
+    ...    a/0=1    a=abs()    a+=1    -a/0=2    abs(-a)%0=1    a+b=1
+    [Return]    ${relationship}
+
+businessrelationship
+    ${relationship}    Create List    !    (    )    &    |
+    ...    A!!!    !!!A    |A    A!    A|||    AB
+    ...    A&    A&(B|C&!D    a    A&A&
+    [Return]    ${relationship}
+
+ChooseDQCRule
+    Wait Until Page Contains Element    //*[@id="leftBar"]/div[1]/div/ul/li[2]/div/ul/li[2]/div/div[2]    10
+    Sleep    2
+    Click Element    //*[@id="leftBar"]/div[1]/div/ul/li[2]/div/ul/li[2]/div/div[2]
+    Sleep    6
+
+creatdqcRule
+    [Arguments]    ${taskname}    ${Rule Type}    ${Template Type}    # ${Rule Type} :1库级，2表级，3字段级，4跨字段级||${Template Type}模板类型
+    Click Element    //*[@id="ruleModelTab.id"]/div[1]/div[1]/button[1]
+    Sleep    2
+    Input Text    //*[@id="createRuleConfig"]/div[1]/div/table[1]/tbody/tr[1]/td[3]/input    ${taskname}
+    Input Text    //*[@id="createRuleConfig"]/div[1]/div/table[2]/tbody/tr[1]/td[3]/div/textarea    ${taskname}
+    Sleep    2
+    Click Element    //*[@id="_input"]
+    Sleep    2
+    rulelevel
+    Click Element    //*[@id="createInstanceFrame"]/div[3]/div/div[2]/button
+    Sleep    2
+    Click Element    //*[@id="createRuleConfig"]/div[2]/div/div[1]/div/div/div/table[1]/tbody/tr[1]/td[3]/div/div/div/div[1]
+    Sleep    2
+    Click Element    //*[@id="mainBody"]/div[15]/ul/li[${Rule Type}]/span
+    Sleep    2
+    Click Element    //*[@id="createRuleConfig"]/div[2]/div/div[1]/div/div/div/table[2]/tbody/tr[1]/td[3]/div/div/div/div[1]
+    Sleep    2
+    Click Element    //*[@id="mainBody"]/div[16]/ul/li/span
+    Sleep    5
+    Click Element    //*[@id="createRuleConfig"]/div[2]/div/div[1]/div/div/div/table[2]/tbody/tr[1]/td[7]/div/div/div/div[1]
+    Sleep    2
+    Click Element    //*[@id="mainBody"]/div[17]/ul/li/span
+    Sleep    4
+    Click Element    //*[@id="createRuleConfig"]/div[2]/div/div[1]/div/div/div/table[3]/tbody/tr[1]/td[3]/button[1]
+    Sleep    3
+    Click Element    //span[text()="autotest"]
+    Sleep    2
+    Click Element    //*[@id="mainBody"]/div[1]/div/div/div/div[3]/button[1]
+    Sleep    4
+    Run Keyword If    ${Rule Type}==2    Run Keywords    Click Element    //*[@id="createRuleConfig"]/div[2]/div/div[1]/div/div/div/table[3]/tbody/tr[2]/td[3]/button[1]
+    ...    AND    Sleep    3
+    ...    AND    Click Element    //span[text()="当前页全选" or text()="Select All on Current Page"]
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //*[@id="mainBody"]/div[1]/div/div/div/div[4]/button[1]
+    ...    AND    Sleep    4
+    Run Keyword If    ${Rule Type}==3 or ${Rule Type}==4    Run Keywords    Click Element    //*[@id="createRuleConfig"]/div[2]/div/div[1]/div/div/div/table[3]/tbody/tr[2]/td[3]/button[1]
+    ...    AND    Sleep    4
+    ...    AND    Click Element    //span[text()="当前页全选" or text()="Select All on Current Page"]
+    ...    AND    Sleep    4
+    ...    AND    Click Element    //*[@id="mainBody"]/div[1]/div/div/div/div[4]/button[1]
+    ...    AND    Sleep    4
+    ...    AND    Click Element    //*[@id="createRuleConfig"]/div[2]/div/div[1]/div/div/div/table[3]/tbody/tr[3]/td[3]/button[1]
+    ...    AND    Sleep    4
+    ...    AND    Click Element    //*[@id="mainBody"]/div[1]/div/div/div/div[3]/div/div[2]/div[1]/div[2]/ul/li/ul/li/div/label/label/span
+    ...    AND    Sleep    4
+    ...    AND    Click Element    //*[@id="mainBody"]/div[1]/div/div/div/div[3]/div/ul/li[2]/a/ti-tab-head
+    ...    AND    Sleep    4
+    ...    AND    Click Element    //*[@id="mainBody"]/div[1]/div/div/div/div[3]/div/div[2]/div[2]/div[2]/ul/li/div/label/label/span
+    ...    AND    Sleep    4
+    ...    AND    Click Element    //*[@id="mainBody"]/div[1]/div/div/div/div[5]/button[1]
+    ...    AND    Sleep    4
+    Click Element    //*[@id="createRuleConfig"]/div[2]/div/div[1]/div/div/div/table[4]/tbody/tr[1]/td[3]/div/div/div/div[1]
+    Sleep    2
+    ${language}    changelanguage
+    ${typename}    Run Keyword If    ${language}==0    templatetype-zh    ${Template Type}
+    ...    ELSE IF    ${language}==1    templatetype-en    ${Template Type}
+    Click Element    //*[@id="mainBody"]/div[18]/ul/li[${typename}]/span
+    Sleep    2
+    Run Keyword If    '${Template Type}'=='合法性校验' or '${Template Type}'=='正则表达式'    Run Keyword    Input Text    //*[@id="steps_1"]/div/div[1]/div/div/div/table[5]/tbody/tr[1]/td[3]/input    /^[0]*$/
+    Run Keyword If    '${Template Type}'=='电话号码'    Run Keywords    Input Text    //*[@id="steps_1"]/div/div[1]/div/div/div/table[7]/tbody/tr[1]/td[3]    2
+    ...    AND    Input Text    //*[@id="steps_1"]/div/div[1]/div/div/div/table[7]/tbody/tr[1]/td[7]    22
+    ...    ELSE    Input Text    //*[@id="createRuleConfig"]/div[2]/div/div[1]/div/div/div/table[5]/tbody/tr[1]/td[7]/input    22
+    Sleep    2
+    Mouse Down    //*[@id="createRuleConfig"]/div[2]/div/div[1]/div/div/div/table[8]/tbody/tr[1]/td[2]
+    Run Keyword If    ${Rule Type}==4    Run Keywords    Click Element    //*[@id="createRuleConfig"]/div[2]/div/div[1]/div/div/div/div/table[2]/tbody/tr[1]/td[3]/button[1]
+    ...    AND    Sleep    3
+    ...    AND    Click Element    //span[text()="autotest"]
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //*[@id="mainBody"]/div[1]/div/div/div/div[3]/button[1]
+    ...    AND    Sleep    4
+    ...    AND    Click Element    //*[@id="createRuleConfig"]/div[2]/div/div[1]/div/div/div/div/table[2]/tbody/tr[2]/td[3]/button[1]
+    ...    AND    Sleep    3
+    ...    AND    Click Element    //span[text()="test1"]
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //*[@id="mainBody"]/div[1]/div/div/div/div[4]/button[1]
+    ...    AND    Sleep    3
+    ...    AND    Click Element    //*[@id="createRuleConfig"]/div[2]/div/div[1]/div/div/div/div/table[2]/tbody/tr[3]/td[3]/button[1]
+    ...    AND    Sleep    3
+    ...    AND    Click Element    //span[text()="a1"]
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //*[@id="mainBody"]/div[1]/div/div/div/div[5]/button[1]
+    ...    AND    Sleep    4
+    Click Element    //*[@id="createInstanceFrame"]/div[3]/div/div[2]/button
+    Sleep    2
+    Click Element    //*[@id="createInstanceFrame"]/div[3]/div/div[2]/button
+    Sleep    2
+    Click Element    //*[@id="createInstanceFrame"]/div[3]/div/div[2]/button
+    ${language}    changelanguage
+    Run Keyword If    ${language}==1    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div[1]/div/span    successful    10
+    ...    ELSE IF    ${language}==0    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div/div/span    成功
+    ...    10
+
+rulelevel
+    ${number}    Evaluate    random.randint(1,4)    random
+    Click Element    //*[@id="mainBody"]/div[5]/ul/li[${number}]/span
+    Sleep    2
+
+templatetype-zh
+    [Arguments]    ${Template Type}
+    ${typename}    Run Keyword If    '${Template Type}'=='数据库空值扫描'    Set Variable    1
+    ...    ELSE IF    '${Template Type}'=='全表空值扫描'    Set Variable    1
+    ...    ELSE IF    '${Template Type}'=='表大小'    Set Variable    2
+    ...    ELSE IF    '${Template Type}'=='表行数'    Set Variable    3
+    ...    ELSE IF    '${Template Type}'=='邮编地址'    Set Variable    3
+    ...    ELSE IF    '${Template Type}'=='电话号码'    Set Variable    4
+    ...    ELSE IF    '${Template Type}'=='IP地址'    Set Variable    5
+    ...    ELSE IF    '${Template Type}'=='正则表达式'    Set Variable    6
+    ...    ELSE IF    '${Template Type}'=='邮箱'    Set Variable    7
+    ...    ELSE IF    '${Template Type}'=='身份证号码'    Set Variable    8
+    ...    ELSE IF    '${Template Type}'=='字段最小值'    Set Variable    9
+    ...    ELSE IF    '${Template Type}'=='字段最大值'    Set Variable    10
+    ...    ELSE IF    '${Template Type}'=='字段汇总最大值'    Set Variable    11
+    ...    ELSE IF    '${Template Type}'=='字段平均值'    Set Variable    12
+    ...    ELSE IF    '${Template Type}'=='字段重复值'    Set Variable    15
+    ...    ELSE IF    '${Template Type}'=='字段空值扫描'    Set Variable    16
+    ...    ELSE IF    '${Template Type}'=='字段唯一性扫描'    Set Variable    17
+    ...    ELSE IF    '${Template Type}'=='字段一致性校验'    Set Variable    1
+    ...    ELSE IF    '${Template Type}'=='合法性校验'    Set Variable    1
+    [Return]    ${typename}
+
+changelanguage
+    ${language}    Set Variable    1
+    [Return]    ${language}    # 0中文，1英文
+
+templatetype-en
+    [Arguments]    ${Template Type}
+    ${typename}    Run Keyword If    '${Template Type}'=='数据库空值扫描'    Set Variable    1
+    ...    ELSE IF    '${Template Type}'=='全表空值扫描'    Set Variable    2
+    ...    ELSE IF    '${Template Type}'=='表大小'    Set Variable    0
+    ...    ELSE IF    '${Template Type}'=='表行数'    Set Variable    1
+    ...    ELSE IF    '${Template Type}'=='邮编地址'    Set Variable    4
+    ...    ELSE IF    '${Template Type}'=='电话号码'    Set Variable    0
+    ...    ELSE IF    '${Template Type}'=='IP地址'    Set Variable    2
+    ...    ELSE IF    '${Template Type}'=='正则表达式'    Set Variable    0
+    ...    ELSE IF    '${Template Type}'=='邮箱'    Set Variable    0
+    ...    ELSE IF    '${Template Type}'=='身份证号码'    Set Variable    0
+    ...    ELSE IF    '${Template Type}'=='字段最小值'    Set Variable    0
+    ...    ELSE IF    '${Template Type}'=='字段最大值'    Set Variable    0
+    ...    ELSE IF    '${Template Type}'=='字段汇总最大值'    Set Variable    0
+    ...    ELSE IF    '${Template Type}'=='字段平均值'    Set Variable    0
+    ...    ELSE IF    '${Template Type}'=='字段重复值'    Set Variable    5
+    ...    ELSE IF    '${Template Type}'=='字段空值扫描'    Set Variable    6
+    ...    ELSE IF    '${Template Type}'=='字段唯一性扫描'    Set Variable    3
+    ...    ELSE IF    '${Template Type}'=='字段一致性校验'    Set Variable    1
+    ...    ELSE IF    '${Template Type}'=='合法性校验'    Set Variable    1
+    [Return]    ${typename}
+
+creatRule-multiple
+    [Arguments]    ${taskname}    ${search}    # 是否通过搜索框搜索指标True或者False
+    ${expression}    expression
+    Sleep    2
+    Input Text    //*[@id="editRuleConfig"]/table/tbody/tr[1]/td[3]/input    ${taskname}
+    Input Text    //*[@id="editRuleConfig"]/table/tbody/tr[2]/td[3]/div/textarea    ${taskname}
+    Mouse Down    //*[@id="contentArea"]/div/div[3]/button[1]
+    Click Element    //*[@id="_btn"]
+    Sleep    2
+    Run Keyword If    ${search}==True    Run Keywords    Input Text    //*[@id="mainBody"]/div[5]/div/div/div/input    ${taskname}
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //span[text()="${taskname}"]
+    ...    AND    Sleep    2
+    Run Keyword If    ${search}==False    Run Keywords    Click Element    //*[@id="mainBody"]/div[5]/ul/li[1]/span
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //*[@id="editRuleConfig"]/table/tbody/tr[4]/td[3]/table/tbody/tr/td[3]/a
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //div[@id="editRuleConfig"]/table/tbody/tr[4]/td[3]/table[2]/tbody/tr/td[2]/div/div/div/div[2]
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //*[@id="mainBody"]/div[6]/ul/li[2]/span
+    ...    AND    Sleep    2
+    ${number}    Evaluate    random.randint(0,5)    random
+    Execute Javascript    document.getElementById("editable-content").innerHTML="a+b${expression[${number}]}1"
+    Sleep    1
+    Click Element    //*[@id="contentArea"]/div/div[3]/button[1]
+    ${language}    changelanguage
+    Run Keyword If    ${language}==1    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div/div/span    successfully    10
+    ...    ELSE IF    ${language}==0    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div/div/span    成功
+    ...    10
+
+CreatBusiness-multiple
+    [Arguments]    ${taskname}    ${Scheduling Mode}    # ${Scheduling Mode}调度模式0单次调度，1周期调度
+    Click Element    //*[@id="businessTab.id"]/div[1]/div[1]/button[1]
+    Sleep    5
+    Input Text    //*[@id="step1"]/div/table/tbody/tr[1]/td[3]/input    ${taskname}
+    Input Text    //*[@id="step1"]/div/table/tbody/tr[2]/td[3]/div/textarea    ${taskname}
+    Click Element    //*[@id="_input"]
+    Sleep    2
+    servicelevel
+    Click Element    //*[@id="service-content"]/div[2]/div[4]/button[2]
+    Sleep    2
+    Click Element    //*[@id="step2"]/div/table/tbody/tr[1]/td[3]/table/tbody/tr/td[2]/div/div/div
+    Sleep    2
+    Input Text    //*[@class="ti-dropdown-container ng-isolate-scope ti-dropdown-container-down"]/div/div/div/input    multipletest
+    Sleep    5
+    ${flag}    flag    //*[@id="mainBody"]/div[6]/ul/li[1]/span
+    Run Keyword If    ${flag}==True    Run Keyword    Click Element    //*[@id="mainBody"]/div[6]/ul/li[1]/span
+    ...    ELSE    ${flag}==False    Run Keyword    Click Element    //*[@id="mainBody"]/div[6]/ul/li/span
+    Sleep    3
+    Click Element    //*[@id="step2"]/div/table/tbody/tr[1]/td[3]/table/tbody/tr/td[3]/a[1]
+    Sleep    2
+    Click Element    //*[@id="step2"]/div/table/tbody/tr[1]/td[3]/table[2]/tbody/tr/td[2]/div/div/div
+    Sleep    4
+    Click Element    //*[@id="mainBody"]/div[position()=last()]/ul/li[2]/span
+    Sleep    1
+    Execute Javascript    document.getElementById("rule").innerHTML="A&B"
+    Click Element    //*[@id="service-content"]/div[2]/div[4]/button[3]
+    Sleep    2
+    Click Element    //*[@id="step3"]/div/table/tbody/tr[2]/td[3]/div/label[2]/span
+    Sleep    2
+    Click Element    //*[@id="step3"]/div/table/tbody/tr[3]/td[3]/div/div/div
+    Sleep    2
+    Click Element    //span[text()="yy"]
+    Click Element    //*[@id="service-content"]/div[2]/div[4]/button[3]
+    Sleep    2
+    ${number}    Evaluate    random.randint(1,4)    random
+    Run Keyword If    ${Scheduling Mode}==0    Run Keyword    Sleep    1
+    Run Keyword If    ${Scheduling Mode}==1    Run Keywords    Click Element    //*[@id="step4"]/div/table/tbody/tr[1]/td[3]/div[2]/label/span
+    ...    AND    Sleep    4
+    ...    AND    Click Element    //div[text()="分钟" or text()="小时" or text()="天" or text()="周" or text()="Minute" or text()="Hour" or text()="Day" or text()="Week"]
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //*[@id="mainBody"]/div[13]/ul/li[${number}]/span
+    ...    AND    Sleep    1
+    Run Keyword If    ${number}==1 and ${Scheduling Mode}==1    Run Keywords    Click Element    //*[@id="step4"]/div/table/tbody/tr[5]/td[3]/div
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //span[text()="30"]
+    ...    AND    Sleep    1
+    Run Keyword If    ${number}==2 and ${Scheduling Mode}==1    Run Keyword    Sleep    1
+    Run Keyword If    ${number}==3 and ${Scheduling Mode}==1    Run Keywords    Click Element    //*[@id="step4"]/div/table/tbody/tr[4]/td[3]/div
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //span[text()="23"]
+    ...    AND    Sleep    1
+    Run Keyword If    ${number}==4 and ${Scheduling Mode}==1    Run Keywords    Click Element    //*[@id="step4"]/div/table/tbody/tr[2]/td[3]/label/span
+    ...    AND    Sleep    2
+    ...    AND    Click Element    //*[@id="step4"]/div/table/tbody/tr[5]/td[3]/div
+    ...    AND    Click Element    //*[@id="mainBody"]/div[9]/ul/li[2]/label
+    ...    AND    Sleep    1
+    ...    AND    Click Element    //*[@id="mainBody"]/div[9]/ul/li[3]/label
+    ...    AND    Sleep    1
+    ...    AND    Click Element    //*[@id="mainBody"]/div[9]/ul/li[4]/label
+    ...    AND    Sleep    1
+    ...    AND    Click Element    //*[@id="mainBody"]/div[9]/ul/li[5]/label
+    ...    AND    Sleep    1
+    ...    AND    Click Element    //*[@id="mainBody"]/div[9]/ul/li[6]/label
+    ...    AND    Sleep    1
+    ...    AND    Click Element    //*[@id="mainBody"]/div[9]/ul/li[7]/label
+    ...    AND    Sleep    1
+    Click Element    //*[@id="service-content"]/div[2]/div[4]/button[3]
+    ${language}    changelanguage
+    Run Keyword If    ${language}==1    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div/div/span    successfully    10
+    ...    ELSE IF    ${language}==0    Run Keyword    Wait Until Element Contains    //*[@id="service-content"]/div[1]/div/div/div/span    成功
+    ...    10
+
+forrepeatbusiness
+    [Arguments]    ${businesssum1}    ${businessname}    ${totalbusinessname}    ${businesssum}
+    : FOR    ${i}    IN RANGE    1    ${businesssum1}
+    \    ${businessname}    Run Keyword If    ${businesssum}>1    Get Element Attribute    //*[@id="mainBody"]/div[1]/div/div/div[2]/div[2]/div/div/table/tbody/tr[2]/td/div/table/tbody/tr[${i}]/td[1]    textContent
+    \    Run Keyword If    ${businesssum}>1    Addlist    ${totalbusinessname}    ${businessname}
+
+chooseBmmDashboard
+    Wait Until Page Contains Element    //div[text()=" 总览" or text()=" Dashboard"]    10
+    Sleep    2
+    Click Element    //div[text()=" 总览" or text()=" Dashboard"]
+    Sleep    4

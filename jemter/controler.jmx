@@ -224,6 +224,11 @@ ${__setProperty(token,${token},)}</stringProp>
             <stringProp name="Argument.value">127.0.0.1</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="while_var" elementType="Argument">
+            <stringProp name="Argument.name">while_var</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -365,7 +370,7 @@ fw.close(); </stringProp>
           </BeanShellSampler>
           <hashTree/>
         </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="LoopControlle_单纯" enabled="true">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="LoopControlle_单纯" enabled="false">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="LoopController.loops">${lgh_1}</stringProp>
         </LoopController>
@@ -377,6 +382,129 @@ fw.close(); </stringProp>
           </CookieManager>
           <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request_csdn" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">blog.csdn.net</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/weixin_44896406/article/details/89173127</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler_1" enabled="true">
+          <stringProp name="BeanShellSampler.query">//1.1
+String a = &quot;aaa&quot;;
+int b = 111;
+
+List list  = new ArrayList();
+//list集合只能保存String类型
+list.add(a);
+list.add(b.toString());
+//普通for循环的写法
+//String aqqq=&quot;&quot;;
+for(int i = 0; i&lt;list.size();i++){
+log.info(&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;);
+log.info(list.get(i));
+}
+//增强for循环的写法
+for(object : list){
+log.info(&quot;==========&quot;);
+log.info(object);
+}
+// 方式一
+String time = bsh.args[1];;
+log.info(&quot;times***************************==========&quot;);
+log.info(time);
+// 方式二
+String time2 = vars.get(&quot;times&quot;);
+log.info(&quot;times***************************==========&quot;);
+log.info(time2);
+
+// 方式三
+vars.put(&quot;times&quot;,&quot;1001&quot;);
+String time2 = vars.get(&quot;times&quot;);
+log.info(&quot;times***************************==========&quot;);
+log.info(time2);
+
+//Integer.parseInt(vars.get(&quot;times&quot;))
+//int aa=Integer.parseInt(time2s)
+//time2=time2+2.0;
+//log.info(aa);
+//vars.put(&quot;times&quot;,time2);
+
+//String while_var1 = bsh.args[0];
+//String while_var2=&quot;4&quot;
+//${__setProperty(&quot;count&quot;,${while_var2})}
+
+//System.out.println(&quot;pre___________________________*&quot;);
+//String coun1t=${__property(&quot;count&quot;)};
+//log.info(${coun1t});
+
+//int a=(int)while_var1+39
+
+//String coun1t=${__property(&quot;count&quot;)}
+//log.info(${count1})
+//System.out.println(count1);
+//System.out.println(${count});
+//props.put(cout,${while_var}) 
+//String acunt=props.get(&quot;cout&quot;)
+//props.get(&quot;cout&quot;) 
+// JMeterUtils.getProperty(&quot;cout量名&quot;) 
+
+//String a=${__property(cout)}
+//log.info(aacunt)
+//System.out.println(&quot;pre___________________________*&quot;);
+//System.out.println(acunt);
+////String token=
+//System.out.println(&quot;pre___________________________*&quot;);
+//String test=vars.get(&apos;cout&apos;);
+
+
+
+
+
+
+</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters">${while_var} ${times}</stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
+          <stringProp name="WhileController.condition">${__javaScript(&quot;${times}&quot;&lt;&quot;1005&quot;)}</stringProp>
+        </WhileController>
+        <hashTree>
+          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler_2" enabled="true">
+            <stringProp name="BeanShellSampler.query">log.info(&quot;*************haah&quot;);
+// 方式二
+String time3 = vars.get(&quot;times&quot;);
+int time2=Integer.parseInt(time3)+2;
+vars.put(&quot;times&quot;,time2.toString());
+//time2=time2+2.0;
+//log.info(time2);
+//vars.put(&quot;times&quot;,time2);
+// 方式三
+//String time3 = vars.get(&quot;times&quot;);
+//log.info(&quot;times***************************==========&quot;);
+//log.info(time3);
+
+</stringProp>
+            <stringProp name="BeanShellSampler.filename"></stringProp>
+            <stringProp name="BeanShellSampler.parameters"></stringProp>
+            <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+          </BeanShellSampler>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request_while" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -463,10 +591,6 @@ fw.close(); </stringProp>
           </objProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
-        <hashTree/>
-        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
-          <stringProp name="WhileController.condition"></stringProp>
-        </WhileController>
         <hashTree/>
       </hashTree>
     </hashTree>

@@ -1,4 +1,4 @@
-# 1jmeter学习
+# jmeter 控制器学习
 [官方手册](http://jmeter.apache.org/usermanual/index.html)  
 [官方 Controller](http://jmeter.apache.org/usermanual/component_reference.html#)  
 [官方demo](https://jmeter.apache.org/demos/)    
@@ -16,7 +16,7 @@ If Controller之下的请求才会受到If控制器的约束，若是平级则�
   
 依从以上规则，填写到Expression输入框中的的内容，样式如：${__groovy("${FE_user}" == "test003",)}  
 [wenzhang](https://blog.csdn.net/wx19900503/article/details/79206382)  
-## 1.1 While Controller使用   
+## 1.2 While Controller使用   
 [官方控制器使用](http://jmeter.apache.org/usermanual/component_reference.html#)  
 eg:  
 ${VAR} - where VAR is set to false by some other test element    
@@ -60,3 +60,11 @@ jmeter脚本创建顺序：打开jmeter - 添加线程组- 在线程组下添加
 ![pic6](https://img-blog.csdn.net/20180315162316961?watermark/2/text/Ly9ibG9nLmNzZG4ubmV0L2FqaWF0dXR1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)  
 脚本如下所示，点击运行，提示输入密令，输入之前设置的密令即可。 
   
+## JMeter第三方插件之Dummy Sampler
+# 2 取样器的使用 
+## 2.1Beanshell的教程
+### Beanshell的基本语法
+Beanshell的For循环与集合  
+[数据类型转换](https://www.cnblogs.com/chongyou/p/10487853.html)      
+[基本语法](https://blog.csdn.net/hujyhfwfh2/article/details/80862134)  
+[建简易教程](https://www.cnblogs.com/puresoul/p/5092628.html)  

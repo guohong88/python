@@ -68,3 +68,7 @@ Beanshell的For循环与集合
 [数据类型转换](https://www.cnblogs.com/chongyou/p/10487853.html)      
 [基本语法](https://blog.csdn.net/hujyhfwfh2/article/details/80862134)  
 [建简易教程](https://www.cnblogs.com/puresoul/p/5092628.html)  
+[简易接口测试](https://blog.csdn.net/weixin_34289744/article/details/89865692)
+[接口测试实践](https://yq.aliyun.com/articles/486352)
+[beanshell使用](https://www.cnblogs.com/puresoul/p/4949889.html)
+[jmeter学习笔记]()

@@ -1,4 +1,4 @@
-# jmeter学习
+# 1jmeter学习
 [官方手册](http://jmeter.apache.org/usermanual/index.html)  
 [官方 Controller](http://jmeter.apache.org/usermanual/component_reference.html#)  
 [官方demo](https://jmeter.apache.org/demos/)    
@@ -22,4 +22,20 @@ eg:
 ${VAR} - where VAR is set to false by some other test element    
 ${__javaScript(${C}==10)}  
 ${__javaScript("${VAR2}"=="abcd")}  
-${_P(property)} - where property is set to "false" somewhere else  
+${_P(property)} - where property is set to "false" somewhere else 
+
+# jemeter配置
+## jemete汉化 
+1.启动后从菜单找到 options 》choose language 》chinese(中文界面展示)  
+2.设置永久默认汉化：找到bin/jmeter.properties这个文件，在#language=en下面插入language=zh_CN
+ ## 解决内存溢出  
+找到jmeter.bat文件编辑    
+调整参数：(参数的调整仅为参考，具体根据测试机的硬件配置来决定）  
+调整堆内存的大小:将默认的set HEAP=-Xms512m -Xmx512m，调整为set HEAP=-Xms1024m -Xmx1024m；  
+调整堆内存中新生带的大小:将默认的set NEW=-XX:NewSize=128m -XX:MaxNewSize=128m，调整为set NEW=-XX:NewSize=256m -XX:MaxNewSize=256m；  
+调整堆内存中永久带的大小:将默认的set PERM=-XX:PermSize=64m -XX:MaxPermSize=128m，调整为set PERM=-XX:PermSize=128m -XX:MaxPermSize=256m；  
+改完后需要重启jmeter。
+
+## 解决ssl证书问题
+[ssl](https://blog.csdn.net/ajiatutu/article/details/79569756)
+  

@@ -38,4 +38,25 @@ ${_P(property)} - where property is set to "false" somewhere else
 
 ## 解决ssl证书问题
 [ssl](https://blog.csdn.net/ajiatutu/article/details/79569756)
+首先要明确http和https的区别：            
+1、https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用          
+2、http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议        
+3、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443      
+4、http的连接很简单，是无状态的；HTTPS协议是有ssl+http协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。  
+使用jmeter访问访问https接口，需要添加ssl层证书。      
+a可以使用在ie浏览器 输入要操作的地址 - 工具栏 - 安全 - 安全报告 - 查看报告点击详细信息 - 复制到文件，按提示逐步操作，将证书存储到本地文件夹  
+https://img-blog.csdn.net/20180315161655888?watermark/2/text/Ly9ibG9nLmNzZG4ubmV0L2FqaWF0dXR1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70   
+https://img-blog.csdn.net/20180315161736230?watermark/2/text/Ly9ibG9nLmNzZG4ubmV0L2FqaWF0dXR1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70   
+b 证书下载后，运行cmd，在命令行把导出的证书打成.store。
+https://img-blog.csdn.net/20180315162029492?watermark/2/text/Ly9ibG9nLmNzZG4ubmV0L2FqaWF0dXR1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70    
+然后设置密令：  
+https://img-blog.csdn.net/20180315162117259?watermark/2/text/Ly9ibG9nLmNzZG4ubmV0L2FqaWF0dXR1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70  
+查看文件，此时已生成my.store  
+jmeter脚本创建顺序：打开jmeter - 添加线程组- 在线程组下添加sampler - http请求，如下图所示：  
+输入内容,示例接口为支付宝支付接口https://memberprod.alipay.com/account/reg/index.htm  
+脚本如下所示：  
+打开jmeter-选项 - ssl管理器  
+导入my.store文件即可。  
+https://img-blog.csdn.net/20180315162316961?watermark/2/text/Ly9ibG9nLmNzZG4ubmV0L2FqaWF0dXR1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70  
+脚本如下所示，点击运行，提示输入密令，输入之前设置的密令即可。 
   

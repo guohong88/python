@@ -24,7 +24,15 @@ ${__javaScript(${C}==10)}
 ${__javaScript("${VAR2}"=="abcd")}  
 ${_P(property)} - where property is set to "false" somewhere else 
 
-# jemeter配置
+# jmeter 配置原件使用
+## csv文件
+1.	用户自定义变量生效的范围跟配置的路径有关。
+配置到测试计划下面：所有的线程组都可以引用到自定义变量
+配置到某个线程组下面：仅该线程组下面的sample可以引用配置的自定义变量
+配置到某个线程（sample）下面自定义变量作用于就仅限于该线程了
+2.	一般情况下，测试脚本中常用的系统变量都可以写到自定义变量里面（方便维护）
+
+# jemeter使用技巧
 ## jemete汉化 
 1.启动后从菜单找到 options 》choose language 》chinese(中文界面展示)  
 2.设置永久默认汉化：找到bin/jmeter.properties这个文件，在#language=en下面插入language=zh_CN

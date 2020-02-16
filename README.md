@@ -19,4 +19,7 @@
 # linux常见命令学习
 [Linux](https://guohong88.github.io/python/Linux/)  
  # 微信小程序 
-[Wechat小程序](https://guohong88.github.io/python//Wechat/)  
+[Wechat小程序](https://guohong88.github.io/python//Wechat/) 
+
+# tester 
+[appAutoTest](https://guohong88.github.io/python/appAutoTest/)  

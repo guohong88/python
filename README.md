@@ -20,6 +20,7 @@
 [Linux](https://guohong88.github.io/python/Linux/)  
  # 微信小程序 
 [Wechat小程序](https://guohong88.github.io/python//Wechat/) 
-
+# 爬虫
+[Scrapy](https://guohong88.github.io/python/Scrapy/) 
 # tester 
 [appAutoTest](https://guohong88.github.io/python/appAutoTest/)  

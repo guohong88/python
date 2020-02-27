@@ -1,24 +1,135 @@
-<html>
-<body>
-<script script type="text/javascript">
-function show()
-{
-    var reader = new FileReader();
-    reader.onload = function() 
-    {
-        alert(this.result)
-    }
-    var f = document.getElementById("filePicker").files[0];
-    reader.readAsText(f);
-}
-</script>
-<input type="file" name="file" id="filePicker"/>
-<div id = "div1">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <link rel="dns-prefetch" href="https://github.githubassets.com">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-ZUjVod2EvYMDbGqRSyW0rpfgBq3i+gnR/4PfrzLsy5f20oIcRfgFQFVKgi3Ztp917bP1K/kdP5q8+nAlJ3+cFA==" rel="stylesheet" href="https://github.githubassets.com/assets/frameworks-6548d5a1dd84bd83036c6a914b25b4ae.css" />
+  
+    <link crossorigin="anonymous" media="all" integrity="sha512-aWCt/A1qCFFHv/UKBoS9jHRqexpzl4le8rrCfAyIIm8RdnEfFxDyhl0nZwbEgY9MXQrQaCOx6doLeYgiLhkJFw==" rel="stylesheet" href="https://github.githubassets.com/assets/github-6960adfc0d6a085147bff50a0684bd8c.css" />
+    
+    
+    
+    
+
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>guohong88/python</title>
+    <meta name="description" content="Contribute to guohong88/python development by creating an account on GitHub.">
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    <meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/207325462/877d4b00-d35f-11e9-9197-72e5a7ed672b" /><meta name="twitter:site" content="@github" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="guohong88/python" /><meta name="twitter:description" content="Contribute to guohong88/python development by creating an account on GitHub." />
+    <meta property="og:image" content="https://repository-images.githubusercontent.com/207325462/877d4b00-d35f-11e9-9197-72e5a7ed672b" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="guohong88/python" /><meta property="og:url" content="https://github.com/guohong88/python" /><meta property="og:description" content="Contribute to guohong88/python development by creating an account on GitHub." />
+
+  <link rel="assets" href="https://github.githubassets.com/">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6NDk3ODc1MDI4OjA3YzhiNDZmMWRhODk1NWU4NGVmZjcwYmQxN2FlYmY2NThlM2YwNzhmNWZiOGY3YTJjNGM4ODBmMWE2MmFjNWM=--876053fcb32d8aaaf65ff0a925882ded0e107be5">
+  <link rel="sudo-modal" href="/sessions/sudo_modal">
+
+  <meta name="request-id" content="72E8:47B0:4C7D8F:634D62:5E57A50C" data-pjax-transient="true" /><meta name="html-safe-nonce" content="e9f262e7032145897aac2044e893ba9bd547ce27" data-pjax-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS9ndW9ob25nODgiLCJyZXF1ZXN0X2lkIjoiNzJFODo0N0IwOjRDN0Q4Rjo2MzRENjI6NUU1N0E1MEMiLCJ2aXNpdG9yX2lkIjoiNDY4MzcxOTYxMzc2NDY1Nzk1NSIsInJlZ2lvbl9lZGdlIjoiYXAtc291dGhlYXN0LTEiLCJyZWdpb25fcmVuZGVyIjoiaWFkIn0=" data-pjax-transient="true" /><meta name="visitor-hmac" content="de77976ab86c6c5431ce4090215f2cc12d7ffc55bcec5d953f93be3048ce064f" data-pjax-transient="true" />
+
+
+
+  <meta name="github-keyboard-shortcuts" content="repository" data-pjax-transient="true" />
+
+  
+
+  <meta name="selected-link" value="repo_source" data-pjax-transient>
+
+      <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+    <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+
+  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-ga_id" content="" class="js-octo-ga-id" /><meta name="octolytics-actor-id" content="15259600" /><meta name="octolytics-actor-login" content="guohong88" /><meta name="octolytics-actor-hash" content="2eb49494b61accbf858e54514907a0c1f931b37097ab1bbeff6a89f02362d0f8" />
+<meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;" data-pjax-transient="true" />
+
+
+
+    <meta name="google-analytics" content="UA-3769691-2">
+
+  <meta class="js-ga-set" name="userId" content="c393269af1fc94fa902c9a27c7b57b6c">
+
+<meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+  
+
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="guohong88">
+
+      <meta name="expected-hostname" content="github.com">
+
+      <meta name="js-proxy-site-detection-payload" content="MDQ3YmM3YmQ0MTNlNWU4MzhmYjUzYTM1YWE3ZTA0NzJmYmQ1YWM0ZDYwYTE1NDNiMzkwMjMxNDdhNzU2MzdjNnx7InJlbW90ZV9hZGRyZXNzIjoiMjE4Ljc2LjEwNS4xMzciLCJyZXF1ZXN0X2lkIjoiNzJFODo0N0IwOjRDN0Q4Rjo2MzRENjI6NUU1N0E1MEMiLCJ0aW1lc3RhbXAiOjE1ODI4MDIxODksImhvc3QiOiJnaXRodWIuY29tIn0=">
+
+    <meta name="enabled-features" content="MARKETPLACE_FEATURED_BLOG_POSTS,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,MARKETPLACE_PENDING_INSTALLATIONS,RELATED_ISSUES,GHE_CLOUD_TRIAL">
+
+  <meta http-equiv="x-pjax-version" content="28d8d8026e57d74f08f6fb05bd40674a">
+  
+
+      <link href="https://github.com/guohong88/python/commits/master.atom" rel="alternate" title="Recent Commits to python:master" type="application/atom+xml">
+
+  <meta name="go-import" content="github.com/guohong88/python git https://github.com/guohong88/python.git">
+
+  <meta name="octolytics-dimension-user_id" content="15259600" /><meta name="octolytics-dimension-user_login" content="guohong88" /><meta name="octolytics-dimension-repository_id" content="207325462" /><meta name="octolytics-dimension-repository_nwo" content="guohong88/python" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="207325462" /><meta name="octolytics-dimension-repository_network_root_nwo" content="guohong88/python" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
+
+
+    <link rel="canonical" href="https://github.com/guohong88/python" data-pjax-transient>
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://github.githubassets.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+  <link rel="manifest" href="/manifest.json" crossOrigin="use-credentials">
+
+  </head>
+
+  <body class="logged-in env-production min-width-lg">
+<div class="Box-body">
+        <article class="markdown-body entry-content p-5" itemprop="text"><h1><a id="user-content-python学习笔记" class="anchor" aria-hidden="true" href="#python学习笔记"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>python学习笔记</h1>
+<h1><a id="user-content-python基础" class="anchor" aria-hidden="true" href="#python基础"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>python基础</h1>
+<p><a href="https://guohong88.github.io/python/Pythonbasic/" rel="nofollow">python基础</a></p>
+<h1><a id="user-content-python高级" class="anchor" aria-hidden="true" href="#python高级"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>python高级</h1>
+<p><a href="https://guohong88.github.io/python/python_HighLevel/html/python-Courseware/" rel="nofollow">python高级语法</a><br>
+<a href="https://guohong88.github.io/python/python_HighLevel/html/RegExp" rel="nofollow">正则表达式</a><br>
+<a href="https://guohong88.github.io/python/python_HighLevel/html/System/" rel="nofollow">多进程_多线程</a><br>
+<a href="https://guohong88.github.io/python_HighLevel/html/webServer/" rel="nofollow">webServer</a><br>
+<a href="https://guohong88.github.io/python_HighLevel/html/Soket/" rel="nofollow">Soket</a></p>
+<h1><a id="user-content-数据结构" class="anchor" aria-hidden="true" href="#数据结构"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>数据结构</h1>
+<p><a href="https://guohong88.github.io/python/DataStructures/" rel="nofollow">数据结构</a></p>
+<h1><a id="user-content-前端" class="anchor" aria-hidden="true" href="#前端"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>前端</h1>
+<p><a href="https://guohong88.github.io/python/Css_js_html/" rel="nofollow">css_js_html</a></p>
+<h1><a id="user-content-数据库" class="anchor" aria-hidden="true" href="#数据库"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>数据库</h1>
+<p><a href="https://guohong88.github.io/python/Datbase/Mongo/" rel="nofollow">Mongo</a><br>
+<a href="https://guohong88.github.io/python/Datbase/MySQL/" rel="nofollow">MySQL</a><br>
+<a href="https://guohong88.github.io/python/Datbase/Redis/" rel="nofollow">Redis</a><br>
+<a href="https://guohong88.github.io/python/Django/" rel="nofollow">Django</a></p>
+<h1><a id="user-content-linux常见命令学习" class="anchor" aria-hidden="true" href="#linux常见命令学习"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>linux常见命令学习</h1>
+<p><a href="https://guohong88.github.io/python/Linux/" rel="nofollow">Linux</a></p>
+<h1><a id="user-content-微信小程序" class="anchor" aria-hidden="true" href="#微信小程序"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>微信小程序</h1>
+<p><a href="https://guohong88.github.io/python//Wechat/" rel="nofollow">Wechat小程序</a></p>
+<h1><a id="user-content-爬虫" class="anchor" aria-hidden="true" href="#爬虫"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>爬虫</h1>
+<p><a href="https://guohong88.github.io/python/Scrapy/" rel="nofollow">Scrapy</a></p>
+<h1><a id="user-content-tester" class="anchor" aria-hidden="true" href="#tester"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>tester</h1>
+<p><a href="https://guohong88.github.io/python/appAutoTest/" rel="nofollow">appAutoTest</a></p>
+</article>
 </div>
-<input type="button" value = "显示"  onclick="show()"/>
-</body>
+ </body>
 </html>
-
-img\bsrc="(https//[\W]+)\b" 
-
-<img src="https://images.nvshenim.info/8253d1edcc0ef0bbee01a76487c71e70.JPG" border="0" onclick="zoom(this)" onload="attachimg(this, 'load')" alt="">

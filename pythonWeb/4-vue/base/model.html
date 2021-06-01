@@ -1,0 +1,428 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book django项目 -->
+    <head>
+        <!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>model\(表单绑定\) | django项目</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../base/todolist.html" />
+    
+    
+    <link rel="prev" href="../base/methods.html" />
+    
+
+        <!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+        
+    <div class="book"
+        data-level="1.6"
+        data-chapter-title="model\(表单绑定\)"
+        data-filepath="base/model.md"
+        data-basepath=".."
+        data-revision="Sun May 19 2019 15:59:10 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Vue
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="base.html">
+            
+                
+                    <a href="../base.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Vue基本使用
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="base/first.html">
+            
+                
+                    <a href="../base/first.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        第一个 Vue 应用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="base/data.html">
+            
+                
+                    <a href="../base/data.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        data\(数据\)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="base/if.html">
+            
+                
+                    <a href="../base/if.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        if条件渲染
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="base/for.html">
+            
+                
+                    <a href="../base/for.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        for列表渲染
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="base/methods.html">
+            
+                
+                    <a href="../base/methods.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        methods\(事件\)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="base/model.html">
+            
+                
+                    <a href="../base/model.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        model\(表单绑定\)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="base/todolist.html">
+            
+                
+                    <a href="../base/todolist.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Todolist案例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="base/es6.html">
+            
+                
+                    <a href="../base/es6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        ES6语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="base/life.html">
+            
+                
+                    <a href="../base/life.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        Vue实例生命周期
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="base/axios.html">
+            
+                
+                    <a href="../base/axios.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.</b>
+                        
+                        axios发送ajax请求
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >django项目</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="model&#x8868;&#x5355;&#x8F93;&#x5165;&#x7ED1;&#x5B9A;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x6570;&#x636E;">model&#x8868;&#x5355;&#x8F93;&#x5165;&#x7ED1;&#x5B9A;(&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x6570;&#x636E;)</h1>
+<ul>
+<li><p>&#x5355;&#x884C;&#x6587;&#x672C;&#x6846;</p>
+</li>
+<li><p>&#x591A;&#x884C;&#x6587;&#x672C;&#x6846;</p>
+</li>
+<li><p>&#x5355;&#x9009;&#x6846;</p>
+</li>
+<li>&#x591A;&#x9009;&#x6846;</li>
+<li>&#x4E0B;&#x62C9;&#x6846;</li>
+</ul>
+<p><a href="https://cn.vuejs.org/v2/guide/forms.html" target="_blank">&#x6587;&#x6863;</a></p>
+<p>&#x53EF;&#x4EE5;&#x7528;<code>v-model</code>&#x6307;&#x4EE4;&#x5728;&#x8868;&#x5355;<code>&lt;input&gt;</code>&#x3001;<code>&lt;textarea&gt;</code>&#x53CA;<code>&lt;select&gt;</code>&#x5143;&#x7D20;&#x4E0A;&#x521B;&#x5EFA;&#x53CC;&#x5411;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x3002;&#x5B83;&#x4F1A;&#x6839;&#x636E;&#x63A7;&#x4EF6;&#x7C7B;&#x578B;&#x81EA;&#x52A8;&#x9009;&#x53D6;&#x6B63;&#x786E;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x66F4;&#x65B0;&#x5143;&#x7D20;&#x3002;&#x5C3D;&#x7BA1;&#x6709;&#x4E9B;&#x795E;&#x5947;&#x3002;&#x5B83;&#x8D1F;&#x8D23;&#x76D1;&#x542C;&#x7528;&#x6237;&#x7684;&#x8F93;&#x5165;&#x4E8B;&#x4EF6;&#x4EE5;&#x66F4;&#x65B0;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x5BF9;&#x4E00;&#x4E9B;&#x6781;&#x7AEF;&#x573A;&#x666F;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x3002;</p>
+<blockquote>
+<p><code>v-model</code>&#x4F1A;&#x5FFD;&#x7565;&#x6240;&#x6709;&#x8868;&#x5355;&#x5143;&#x7D20;&#x7684;<code>value</code>&#x3001;<code>checked</code>&#x3001;<code>selected</code>&#x7279;&#x6027;&#x7684;&#x521D;&#x59CB;&#x503C;&#x800C;&#x603B;&#x662F;&#x5C06; Vue &#x5B9E;&#x4F8B;&#x7684;&#x6570;&#x636E;&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x6765;&#x6E90;&#x3002;&#x4F60;&#x5E94;&#x8BE5;&#x901A;&#x8FC7; JavaScript &#x5728;&#x7EC4;&#x4EF6;&#x7684;<code>data</code>&#x9009;&#x9879;&#x4E2D;&#x58F0;&#x660E;&#x521D;&#x59CB;&#x503C;</p>
+</blockquote>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;!-- &#x5F00;&#x53D1;&#x73AF;&#x5883;&#x7248;&#x672C; --&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;app&quot;&gt;
+    &lt;table border=&quot;1&quot;&gt;
+      &lt;tr&gt;&lt;td&gt;&#x7528; &#x6237; &#x540D;&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;text&quot; v-model=&quot;username&quot; @blur=&quot;checkusername&quot;&gt; &lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;&#x5BC6;&#x7801;&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;password&quot; v-model=&quot;password1&quot;&gt; &lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;&#x786E;&#x8BA4;&#x5BC6;&#x7801;&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;password&quot; v-model=&quot;password2&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;&#x6027;&#x522B;&lt;/td&gt;
+        &lt;td&gt;
+          &#x7537;&lt;input type=&quot;radio&quot; name=&quot;sex&quot;  value=&quot;boy&quot; v-model=&quot;sex&quot;&gt; 
+          &#x5973; &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;girl&quot; v-model=&quot;sex&quot;&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;&#x7231;&#x597D;&lt;/td&gt;
+        &lt;td&gt;
+          &#x8DB3;&#x7403; &lt;input type=&quot;checkbox&quot; name=&quot;like&quot; value=&quot;&#x8DB3;&#x7403;&quot; v-model=&quot;like&quot;&gt; 
+          &#x7BEE;&#x7403; &lt;input type=&quot;checkbox&quot; name=&quot;like&quot; value=&quot;&#x7BEE;&#x7403;&quot; v-model=&quot;like&quot;&gt;
+          &#x5175;&#x4E53;&#x7403;&lt;input type=&quot;checkbox&quot; name=&quot;like&quot; value=&quot;&#x5175;&#x4E53;&#x7403;&quot; v-model=&quot;like&quot;&gt; 
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;&#x6240;&#x5728;&#x57CE;&#x5E02;&lt;/td&gt;
+        &lt;td&gt;
+          &lt;select name=&quot;city&quot; v-model=&quot;city&quot;&gt;
+            &lt;option value=&quot;&#x5317;&#x4EAC;&quot;&gt;&#x5317;&#x4EAC;&lt;/option&gt;
+            &lt;option value=&quot;&#x4E0A;&#x6D77;&quot;&gt;&#x4E0A;&#x6D77;&lt;/option&gt;
+            &lt;option value=&quot;&#x5E7F;&#x5DDE;&quot;&gt;&#x5E7F;&#x5DDE;&lt;/option&gt;
+            &lt;option value=&quot;&#x6DF1;&#x5733;&quot;&gt;&#x6DF1;&#x5733;&lt;/option&gt;
+          &lt;/select&gt; 
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;&#x4E2A;&#x4EBA;&#x7B80;&#x4ECB;&lt;/td&gt;&lt;td&gt;&lt;textarea name=&quot;desc&quot; v-model=&quot;desc&quot;&gt;&lt;/textarea&gt; &lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;button @click=&quot;register&quot;&gt;&#x6CE8;&#x518C;&lt;/button&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var app = new Vue({
+  el: &apos;#app&apos;,
+  data: {
+      username:&apos;&apos;,
+      password1:&apos;&apos;,
+      password2:&apos;&apos;,
+      sex:&apos;&apos;,
+      like:[],
+      city:&apos;&apos;,
+      desc:&apos;&apos;
+
+  },
+  methods:{
+    register:function(){
+
+        alert(this.username+this.password1+this.password2+this.sex+this.like+this.city+this.desc)
+    },
+    checkusername:function(){
+      alert(this.username)
+    }
+  }
+})
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><p>&#x6548;&#x679C;</p>
+<p><img src="../assets/input-model.png" alt=""></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../base/methods.html" class="navigation navigation-prev " aria-label="Previous page: methods\(事件\)"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../base/todolist.html" class="navigation navigation-next " aria-label="Next page: Todolist案例"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontsettings":{"family":"sans","size":2,"theme":"white"},"toggle-chapters":{},"splitter":{},"emphasize":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+    </body>
+    <!-- End of book django项目 -->
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <!-- Start book Django课程讲义 -->
+    <head>
+        <!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>使用Element-ui | Django课程讲义</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="Big">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-tbfed-pagefooter/footer.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../data/vue-cli.html" />
+    
+    
+    <link rel="prev" href="../data/more.html" />
+    
+
+        <!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+        
+    <div class="book"
+        data-level="2.4"
+        data-chapter-title="使用Element-ui"
+        data-filepath="data/element.md"
+        data-basepath=".."
+        data-revision="Tue Apr 09 2019 18:08:12 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Vue组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="data/property.html">
+            
+                
+                    <a href="../data/property.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Vue组件中的data和props属性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="data/Singular.html">
+            
+                
+                    <a href="../data/Singular.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        单文件组件
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="data/configure.html">
+            
+                
+                    <a href="../data/configure.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        单文件组件使用配置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="data/use.html">
+            
+                
+                    <a href="../data/use.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        单文件组件打包
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="data/more.html">
+            
+                
+                    <a href="../data/more.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        多个单文件组件使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="data/element.html">
+            
+                
+                    <a href="../data/element.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        使用Element-ui
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="data/vue-cli.html">
+            
+                
+                    <a href="../data/vue-cli.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        vue-cli的使用
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Django课程讲义</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="elementui">Element-ui</h2>
+<p>&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x5C31;&#x50CF;&#x662F;&#x4E00;&#x4E2A;&#x4E2A;&#x5C01;&#x88C5;&#x597D;&#x7684;&#x9875;&#x9762;&#x6837;&#x677F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4E00;&#x628A;&#x8FD9;&#x4E9B;&#x6837;&#x677F;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x9875;&#x9762;&#x3002;&#x5C31;&#x50CF;QQ&#x7A7A;&#x95F4;&#x88C5;&#x626E;&#x4E00;&#x6837;&#xFF0C;&#x5C06;&#x4E2A;&#x4E2A;&#x6837;&#x677F;&#x653E;&#x5165;QQ&#x7A7A;&#x95F4;&#x9875;&#x9762;&#x4E2D;&#x7EC4;&#x6210;&#x81EA;&#x5DF1;&#x98CE;&#x683C;&#x7684;&#x9875;&#x9762;&#x3002;&#x800C;Element-ui&#x5C31;&#x5C06;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x6837;&#x5F0F;&#x5C01;&#x88C5;&#x6210;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x96C6;&#x6210;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x3002;</p>
+<ol>
+<li><p>&#x5728;main.js&#x4E2D;&#x5C06;emelent-ui&#x5F15;&#x5165;&#x5230;&#x9879;&#x76EE;&#x4E2D;</p>
+<ol>
+<li><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./App.vue&apos;</span>
+<span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./router/router.js&apos;</span>
+// &#x5F15;&#x5165;ElementUI
+<span class="hljs-keyword">import</span> ElementUI <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;element-ui&apos;</span>
+// &#x5F15;&#x5165;css
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;element-ui/lib/theme-chalk/index.css&apos;</span>
+// &#x4F7F;&#x7528;ElementUI
+Vue.use(ElementUI)
+
+new Vue({
+    el:<span class="hljs-string">&apos;#app&apos;</span>,
+    router,
+    render:function(creater){
+        return creater(App)
+    }
+})
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;element-ui&#x7684;&#x4EE3;&#x7801;,</p>
+<ol>
+<li><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;block&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;demonstration&quot;</span>&gt;</span>&#x9ED8;&#x8BA4;<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">el-slider</span> <span class="hljs-attribute">v-model</span>=<span class="hljs-value">&quot;value1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">el-slider</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;block&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;demonstration&quot;</span>&gt;</span>&#x81EA;&#x5B9A;&#x4E49;&#x521D;&#x59CB;&#x503C;<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">el-slider</span> <span class="hljs-attribute">v-model</span>=<span class="hljs-value">&quot;value2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">el-slider</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;block&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;demonstration&quot;</span>&gt;</span>&#x9690;&#x85CF; Tooltip<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">el-slider</span> <span class="hljs-attribute">v-model</span>=<span class="hljs-value">&quot;value3&quot;</span> <span class="hljs-attribute">:show-tooltip</span>=<span class="hljs-value">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">el-slider</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;block&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;demonstration&quot;</span>&gt;</span>&#x683C;&#x5F0F;&#x5316; Tooltip<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">el-slider</span> <span class="hljs-attribute">v-model</span>=<span class="hljs-value">&quot;value4&quot;</span> <span class="hljs-attribute">:format-tooltip</span>=<span class="hljs-value">&quot;formatTooltip&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">el-slider</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;block&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;demonstration&quot;</span>&gt;</span>&#x7981;&#x7528;<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">el-slider</span> <span class="hljs-attribute">v-model</span>=<span class="hljs-value">&quot;value5&quot;</span> <span class="hljs-attribute">disabled</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">el-slider</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    data() {
+      <span class="hljs-keyword">return</span> {
+        value1: <span class="hljs-number">0</span>,
+        value2: <span class="hljs-number">50</span>,
+        value3: <span class="hljs-number">36</span>,
+        value4: <span class="hljs-number">48</span>,
+        value5: <span class="hljs-number">42</span>
+      }
+    },
+    methods: {
+      formatTooltip(val) {
+        <span class="hljs-keyword">return</span> val / <span class="hljs-number">100</span>;
+      }
+    }
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+<p>Emelent&#x7684;&#x5176;&#x4ED6;&#x6548;&#x679C;&#x6837;&#x5F0F;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#xFF1A;</p>
+<p><a href="http://element-cn.eleme.io/#/zh-CN/component/progress" target="_blank">http://element-cn.eleme.io/#/zh-CN/component/progress</a></p>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">File Modify: 
+2019-04-04 20:08:44
+</span></footer>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../data/more.html" class="navigation navigation-prev " aria-label="Previous page: 多个单文件组件使用"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../data/vue-cli.html" class="navigation navigation-next " aria-label="Next page: vue-cli的使用"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"disqus":{"shortName":"gitbookuse"},"github":{"url":"https://github.com/dododream"},"search-pro":{"cutWordLib":"nodejieba","defineWord":["gitbook-use"]},"sharing":{"weibo":true,"facebook":true,"twitter":true,"google":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"baidu":{"token":"ff100361cdce95dd4c8fb96b4009f7bc"},"sitemap":{"hostname":"http://www.treenewbee.top"},"donate":{"wechat":"http://weixin.png","alipay":"http://alipay.png","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"edit-link":{"base":"https://github.com/dododream/edit","label":"Edit This Page"},"tbfed-pagefooter":{},"splitter":{},"toggle-chapters":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+    </body>
+    <!-- End of book Django课程讲义 -->
+</html>

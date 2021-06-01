@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <!-- Start book Django课程讲义 -->
+    <head>
+        <!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>vue-cli的使用 | Django课程讲义</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="Big">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-tbfed-pagefooter/footer.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../data/element.html" />
+    
+
+        <!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+        
+    <div class="book"
+        data-level="3"
+        data-chapter-title="vue-cli的使用"
+        data-filepath="data/vue-cli.md"
+        data-basepath=".."
+        data-revision="Tue Apr 09 2019 18:08:12 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Vue组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="data/property.html">
+            
+                
+                    <a href="../data/property.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Vue组件中的data和props属性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="data/Singular.html">
+            
+                
+                    <a href="../data/Singular.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        单文件组件
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="data/configure.html">
+            
+                
+                    <a href="../data/configure.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        单文件组件使用配置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="data/use.html">
+            
+                
+                    <a href="../data/use.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        单文件组件打包
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="data/more.html">
+            
+                
+                    <a href="../data/more.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        多个单文件组件使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="data/element.html">
+            
+                
+                    <a href="../data/element.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        使用Element-ui
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="3" data-path="data/vue-cli.html">
+            
+                
+                    <a href="../data/vue-cli.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        vue-cli的使用
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Django课程讲义</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="vuecli&#x7684;&#x4F7F;&#x7528;">Vue-cli&#x7684;&#x4F7F;&#x7528;</h2>
+<p> &#x6211;&#x4EEC;&#x7684;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x90FD;&#x662F;&#x624B;&#x52A8;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x501F;&#x52A9;vue-cli&#x521B;&#x5EFA;&#x51FA;&#x6211;&#x4EEC;&#x7684;&#x6240;&#x6709;&#x9879;&#x76EE;&#x6587;&#x4EF6;</p>
+<ol>
+<li><p>&#x5168;&#x5C40;&#x5B89;&#x88C5;vue-cli</p>
+<ol>
+<li><pre><code class="lang-shell">npm install --global vue-cli
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>&#x9879;&#x76EE;&#x521B;&#x5EFA;</p>
+<ol>
+<li><pre><code class="lang-shell">vue init webpack &#x9879;&#x76EE;&#x540D;
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>&#x8FD0;&#x884C;&#x8C03;&#x8BD5;&#x9879;&#x76EE;</p>
+<ol>
+<li><pre><code class="lang-shell">// &#x8FDB;&#x5165;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x6267;&#x884C;&#x4E0B;&#x9762;&#x6307;&#x4EE4;
+npm run dev
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>&#x9879;&#x76EE;&#x6253;&#x5305;</p>
+<ol>
+<li><pre><code class="lang-shell">npm run build
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+<h5 id="&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;">&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h5>
+<p><img src="../src/Snip20190404_5.png" alt="Snip20190404_5"></p>
+<ul>
+<li>&#x6587;&#x4EF6;&#x5939;1(src)&#xFF0C;&#x4E3B;&#x5F00;&#x53D1;&#x76EE;&#x5F55;&#xFF0C;<strong>&#x8981;&#x5F00;&#x53D1;&#x7684;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x5168;&#x90E8;&#x5728;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;</strong></li>
+<li>&#x6587;&#x4EF6;&#x5939;2(static)&#xFF0C;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x76EE;&#x5F55;&#xFF0C;&#x6240;&#x6709;&#x7684;css&#xFF0C;js&#x6587;&#x4EF6;&#x653E;&#x5728;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5939;</li>
+<li>&#x6587;&#x4EF6;&#x5939;3(components)&#xFF0C;&#x7EC4;&#x4EF6;&#x76EE;&#x5F55;&#xFF0C;vue&#x683C;&#x5F0F;&#x7684;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x90FD;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E2D;</li>
+<li>&#x6587;&#x4EF6;&#x5939;4(router)&#xFF0C;&#x8DEF;&#x7531;&#x76EE;&#x5F55;&#xFF0C;&#x5728;&#x6B64;&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x914D;&#x7F6E;&#x7EC4;&#x4EF6;&#x8DEF;&#x7531;</li>
+</ul>
+<p>&#x8FD8;&#x6709;node_modules&#x76EE;&#x5F55;&#x662F;node&#x7684;&#x5305;&#x76EE;&#x5F55;&#xFF0C;config&#x662F;&#x914D;&#x7F6E;&#x76EE;&#x5F55;&#xFF0C;build&#x662F;&#x9879;&#x76EE;&#x6253;&#x5305;&#x65F6;&#x4F9D;&#x8D56;&#x7684;&#x76EE;&#x5F55;&#x3002;</p>
+<h5 id="&#x9875;&#x9762;&#x7ED3;&#x6784;&#x8BF4;&#x660E;">&#x9875;&#x9762;&#x7ED3;&#x6784;&#x8BF4;&#x660E;</h5>
+<p><img src="../src/Snip20190404_6.png" alt="Snip20190404_6"></p>
+<p>&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x662F;&#x4E00;&#x4E2A;&#x4E3B;&#x6587;&#x4EF6;index.html,index.html&#x4E2D;&#x4F1A;&#x5F15;&#x5165;src&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x7684;main.js,main.js&#x4E2D;&#x4F1A;&#x5BFC;&#x5165;&#x9876;&#x7EA7;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;App.vue,App.vue&#x4E2D;&#x4F1A;&#x901A;&#x8FC7;&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x6216;&#x8005;&#x8DEF;&#x7531;&#x6765;&#x5F15;&#x7528;components&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x3002; </p>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">File Modify: 
+2019-04-04 20:09:21
+</span></footer>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../data/element.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 使用Element-ui"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"disqus":{"shortName":"gitbookuse"},"github":{"url":"https://github.com/dododream"},"search-pro":{"cutWordLib":"nodejieba","defineWord":["gitbook-use"]},"sharing":{"weibo":true,"facebook":true,"twitter":true,"google":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"baidu":{"token":"ff100361cdce95dd4c8fb96b4009f7bc"},"sitemap":{"hostname":"http://www.treenewbee.top"},"donate":{"wechat":"http://weixin.png","alipay":"http://alipay.png","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"edit-link":{"base":"https://github.com/dododream/edit","label":"Edit This Page"},"tbfed-pagefooter":{},"splitter":{},"toggle-chapters":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+    </body>
+    <!-- End of book Django课程讲义 -->
+</html>

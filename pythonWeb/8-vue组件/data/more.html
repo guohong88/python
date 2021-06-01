@@ -1,0 +1,419 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <!-- Start book Django课程讲义 -->
+    <head>
+        <!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>多个单文件组件使用 | Django课程讲义</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="Big">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-tbfed-pagefooter/footer.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../data/element.html" />
+    
+    
+    <link rel="prev" href="../data/use.html" />
+    
+
+        <!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+        
+    <div class="book"
+        data-level="2.3"
+        data-chapter-title="多个单文件组件使用"
+        data-filepath="data/more.md"
+        data-basepath=".."
+        data-revision="Tue Apr 09 2019 18:08:12 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Vue组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="data/property.html">
+            
+                
+                    <a href="../data/property.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Vue组件中的data和props属性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="data/Singular.html">
+            
+                
+                    <a href="../data/Singular.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        单文件组件
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="data/configure.html">
+            
+                
+                    <a href="../data/configure.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        单文件组件使用配置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="data/use.html">
+            
+                
+                    <a href="../data/use.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        单文件组件打包
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3" data-path="data/more.html">
+            
+                
+                    <a href="../data/more.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        多个单文件组件使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="data/element.html">
+            
+                
+                    <a href="../data/element.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        使用Element-ui
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="data/vue-cli.html">
+            
+                
+                    <a href="../data/vue-cli.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        vue-cli的使用
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Django课程讲义</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h3 id="&#x591A;&#x4E2A;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;">&#x591A;&#x4E2A;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;</h3>
+<p>&#x5728;project&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;components&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x6240;&#x6709;&#x5B50;&#x7EC4;&#x4EF6;&#x653E;&#x5165;components&#x6587;&#x4EF6;&#x5939;&#x4E0B;<img src="../src/Snip20190404_2.png" alt="Snip20190404_2"></p>
+<h3 id="1&#x3001;&#x591A;&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x4F7F;&#x7528;">1&#x3001;&#x591A;&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x4F7F;&#x7528;</h3>
+<h3 id="child1vue">Child1.vue</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>&#x5B50;&#x7EC4;&#x4EF6;1<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="actionscript">
+<span class="hljs-comment">// export default {</span>
+
+<span class="hljs-comment">// }</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+</code></pre>
+<h2 id="child2vue">Child2.vue</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>&#x5B50;&#x7EC4;&#x4EF6;2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="actionscript">
+<span class="hljs-comment">// export default {</span>
+
+<span class="hljs-comment">// }</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+</code></pre>
+<h3 id="appvue">App.vue</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        &#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;
+        <span class="hljs-comment">&lt;!-- &#x8C03;&#x7528;&#x5B50;&#x7EC4;&#x4EF6; --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Child1</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Child1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Child2</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Child2</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">template</span>&gt;</span>
+
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-comment">//&#x5BFC;&#x5165;components&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x5B50;&#x6587;&#x4EF6; Child1&#x4E3A;&#x6307;&#x5B9A;&#x7684;&#x7EC4;&#x4EF6;&#x540D;&#xFF0C;&#x53EF;&#x4EE5;&#x4EFB;&#x610F;&#x547D;&#x540D;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;&#x6309;&#x7167;&#x6587;&#x4EF6;&#x540D;</span>
+<span class="hljs-keyword">import</span> Child1 <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/Child1.vue&apos;</span>
+<span class="hljs-keyword">import</span> Child2 <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/Child2.vue&apos;</span>
+
+export default {
+    // &#x5C06;&#x5B50;&#x7EC4;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;App.vue&#x4E2D;
+    components:{
+        Child1,
+        Child2,
+
+    }
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+</code></pre>
+<h3 id="2&#x3001;&#x591A;&#x7EC4;&#x4EF6;&#x8DEF;&#x7531;&#x4F7F;&#x7528;">2&#x3001;&#x591A;&#x7EC4;&#x4EF6;&#x8DEF;&#x7531;&#x4F7F;&#x7528;</h3>
+<p>&#x4F7F;&#x7528;&#x8DEF;&#x7531;&#x5F62;&#x5F0F;&#x5C06;&#x591A;&#x4E2A;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;</p>
+<ol>
+<li><p>&#x5B9A;&#x4E49;&#x8DEF;&#x7531;&#x76EE;&#x5F55;&#x548C;&#x8DEF;&#x7531;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-shell">mkdir router
+touch router.js
+</code></pre>
+</li>
+<li><p>&#x7F16;&#x5199;&#x8DEF;&#x7531;&#x6587;&#x4EF6;router.js</p>
+<ol>
+<li><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
+// &#x5BFC;&#x5165;&#x8DEF;&#x7531;&#x63D2;&#x4EF6;
+<span class="hljs-keyword">import</span> Router <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue-router&apos;</span>
+<span class="hljs-keyword">import</span> Child1 <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../components/Child1.vue&apos;</span>
+<span class="hljs-keyword">import</span> Child2 <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../components/Child2.vue&apos;</span>
+// &#x5728;vue&#x4E2D;&#x4F7F;&#x7528;&#x63D2;&#x4EF6;
+Vue.use(Router)
+export default new Router({
+    // &#x5B9A;&#x4E49;&#x5339;&#x914D;&#x89C4;&#x5219;
+   routes:[
+       {
+           path:<span class="hljs-string">&apos;/&apos;</span>,  // &#x5339;&#x914D;&#x6839;&#x8DEF;&#x5F84;&#xFF0F;&#xFF0C;&#x52A0;&#x8F7D;Chiled1&#x4E2D;&#x7684;&#x5185;&#x5BB9;
+           component:Child1
+       },
+       {
+           path:<span class="hljs-string">&apos;/child2&apos;</span>,
+           component:Child2
+       }
+   ]
+})
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>&#x5728;main.js&#x4E2D;&#x4F7F;&#x7528;&#x8DEF;&#x7531;</p>
+<ol>
+<li><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./App.vue&apos;</span>
+//&#x5BFC;&#x5165;&#x5B9A;&#x4E49;&#x597D;&#x7684;&#x8DEF;&#x7531;
+<span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./router/router.js&apos;</span>
+
+new Vue({
+    el:<span class="hljs-string">&apos;#app&apos;</span>,
+    router,  //&#x4F7F;&#x7528;&#x8DEF;&#x7531;
+    render:function(creater){
+        return creater(App)
+    }
+})
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>&#x5728;App.vue&#x4E2D;&#x6307;&#x5B9A;&#x8DEF;&#x7531;&#x6807;&#x7B7E;</p>
+<ol>
+<li><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        &#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;
+         <span class="hljs-comment">&lt;!-- &#x8BB0;&#x8F7D;&#x8DEF;&#x7531;&#x6807;&#x7B7E; --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">router-view</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="undefined">
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">File Modify: 
+2019-04-04 20:08:03
+</span></footer>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../data/use.html" class="navigation navigation-prev " aria-label="Previous page: 单文件组件打包"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../data/element.html" class="navigation navigation-next " aria-label="Next page: 使用Element-ui"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"disqus":{"shortName":"gitbookuse"},"github":{"url":"https://github.com/dododream"},"search-pro":{"cutWordLib":"nodejieba","defineWord":["gitbook-use"]},"sharing":{"weibo":true,"facebook":true,"twitter":true,"google":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"baidu":{"token":"ff100361cdce95dd4c8fb96b4009f7bc"},"sitemap":{"hostname":"http://www.treenewbee.top"},"donate":{"wechat":"http://weixin.png","alipay":"http://alipay.png","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"edit-link":{"base":"https://github.com/dododream/edit","label":"Edit This Page"},"tbfed-pagefooter":{},"splitter":{},"toggle-chapters":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+    </body>
+    <!-- End of book Django课程讲义 -->
+</html>

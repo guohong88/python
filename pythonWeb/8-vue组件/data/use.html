@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <!-- Start book Django课程讲义 -->
+    <head>
+        <!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>单文件组件打包 | Django课程讲义</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="Big">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-tbfed-pagefooter/footer.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../data/more.html" />
+    
+    
+    <link rel="prev" href="../data/configure.html" />
+    
+
+        <!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+        
+    <div class="book"
+        data-level="2.2"
+        data-chapter-title="单文件组件打包"
+        data-filepath="data/use.md"
+        data-basepath=".."
+        data-revision="Tue Apr 09 2019 18:08:12 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Vue组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="data/property.html">
+            
+                
+                    <a href="../data/property.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Vue组件中的data和props属性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="data/Singular.html">
+            
+                
+                    <a href="../data/Singular.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        单文件组件
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="data/configure.html">
+            
+                
+                    <a href="../data/configure.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        单文件组件使用配置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="data/use.html">
+            
+                
+                    <a href="../data/use.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        单文件组件打包
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="data/more.html">
+            
+                
+                    <a href="../data/more.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        多个单文件组件使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="data/element.html">
+            
+                
+                    <a href="../data/element.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        使用Element-ui
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="data/vue-cli.html">
+            
+                
+                    <a href="../data/vue-cli.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        vue-cli的使用
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Django课程讲义</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x7684;&#x4F7F;&#x7528;">&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x7684;&#x4F7F;&#x7528;</h2>
+<p>&#x9879;&#x76EE;&#x642D;&#x5EFA;&#x5B8C;&#x6210;&#x540E;&#x9700;&#x8981;&#x5206;&#x522B;&#x5BF9; main.js , index.html ,  App.vue &#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x7F16;&#x5199;&#x4EE3;&#x7801;</p>
+<h3 id="indexhtml">index.html</h3>
+<pre><code class="lang-html"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;viewport&quot;</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">http-equiv</span>=<span class="hljs-value">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">&quot;ie=edge&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&apos;app&apos;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">App</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">App</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x5F15;&#x5165;&#x6253;&#x5305;&#x540E;&#x7684;index.js&#x6587;&#x4EF6;&#x3002;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x5B57;&#x4E0D;&#x662F;&#x56FA;&#x5B9A;&#x540D;&#x5B57;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;webpack.config.js&#x7684;&#x51FA;&#x53E3;&#x6587;&#x4EF6;&#x4E2D;&#x6307;&#x5B9A; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;./index.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<h3 id="mainjs">main.js</h3>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x5F15;&#x5165;vue&#x548C;App&#x7EC4;&#x4EF6;</span>
+<span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./App.vue&apos;</span>
+
+new Vue({
+    el:<span class="hljs-string">&apos;#app&apos;</span>,
+    // &#x6E32;&#x67D3;App&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x8FD4;&#x56DE;&#x7ED9;index.html&#x6587;&#x4EF6;&#x4F7F;&#x7528;
+    render:function(creater){
+        return creater(App)
+    }
+})
+</code></pre>
+<h3 id="appvue">App.vue</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">template</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- &#x6307;&#x5B9A;html&#x663E;&#x793A;&#x5185;&#x5BB9; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">template</span>&gt;</span>
+
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="actionscript">
+    <span class="hljs-comment">// &#x6307;&#x5B9A;js&#x5185;&#x5BB9;</span>
+<span class="hljs-comment">// export default {</span>
+
+<span class="hljs-comment">// }</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+<span class="hljs-comment">/* &#x6307;&#x5B9A;css&#x5185;&#x5BB9; */</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+</code></pre>
+<h3 id="&#x9879;&#x76EE;&#x6253;&#x5305;">&#x9879;&#x76EE;&#x6253;&#x5305;</h3>
+<p>&#x6587;&#x4EF6;&#x7F16;&#x5199;&#x5B8C;&#x6210;&#x540E;&#x5E76;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x8FD0;&#x884C;index.html&#x4EA7;&#x751F;&#x6548;&#x679C;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x9879;&#x76EE;&#x8FDB;&#x884C;&#x6253;&#x5305;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x6E32;&#x67D3;&#x540E;&#x7684;index.js&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x4F7F;&#x7528;</p>
+<pre><code class="lang-shell">npm run build
+</code></pre>
+<p>&#x6253;&#x5305;&#x540E;&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x751F;&#x6210;&#x4E00;&#x4E2A;index.js &#x6587;&#x4EF6;&#xFF0C;&#x5728;index.html&#x4E2D;&#x5F15;&#x7528;&#x8BE5;&#x6587;&#x4EF6;&#xFF0C;&#x8FD0;&#x884C;index.html&#x6587;&#x4EF6;&#x770B;&#x5230;&#x6548;&#x679C;</p>
+<h3 id="&#x9879;&#x76EE;&#x8C03;&#x8BD5;&#x8FD0;&#x884C;">&#x9879;&#x76EE;&#x8C03;&#x8BD5;&#x8FD0;&#x884C;</h3>
+<p>&#x6BCF;&#x6B21;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x770B;&#x5230;&#x7EC4;&#x4EF6;&#x6548;&#x679C;&#x9700;&#x8981;&#x624B;&#x52A8;&#x751F;&#x6210;&#x4E00;&#x4E2A;index.js&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x501F;&#x52A9;webpack-dev-server&#x81EA;&#x52A8;&#x8FD0;&#x884C;&#x6211;&#x4EEC;&#x7684;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-shell">// &#x5728;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x6267;&#x884C;&#x4E0B;&#x9762;&#x6307;&#x4EE4;&#x53EF;&#x4EE5;&#x5F00;&#x542F;&#x524D;&#x7AEF;&#x670D;&#x52A1;&#xFF0C;&#x81EA;&#x52A8;&#x8FD0;&#x884C;&#x524D;&#x7AEF;&#x4EE3;&#x7801;
+./node_modules/.bin/webpack-dev-server
+</code></pre>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">File Modify: 
+2019-04-04 20:07:13
+</span></footer>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../data/configure.html" class="navigation navigation-prev " aria-label="Previous page: 单文件组件使用配置"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../data/more.html" class="navigation navigation-next " aria-label="Next page: 多个单文件组件使用"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"disqus":{"shortName":"gitbookuse"},"github":{"url":"https://github.com/dododream"},"search-pro":{"cutWordLib":"nodejieba","defineWord":["gitbook-use"]},"sharing":{"weibo":true,"facebook":true,"twitter":true,"google":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"baidu":{"token":"ff100361cdce95dd4c8fb96b4009f7bc"},"sitemap":{"hostname":"http://www.treenewbee.top"},"donate":{"wechat":"http://weixin.png","alipay":"http://alipay.png","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"edit-link":{"base":"https://github.com/dododream/edit","label":"Edit This Page"},"tbfed-pagefooter":{},"splitter":{},"toggle-chapters":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+    </body>
+    <!-- End of book Django课程讲义 -->
+</html>

@@ -26,6 +26,8 @@
 [Wechat小程序](https://guohong88.github.io/python//Wechat/) 
 # 爬虫
 [Scrapy](https://guohong88.github.io/python/Scrapy/) 
+# 人工智能
+[机器学习](https://guohong88.github.io/python/AritificialIntelligence/Machine%20learning/index.html)
 # tester 
 [appAutoTest](https://guohong88.github.io/python/appAutoTest/)  
 

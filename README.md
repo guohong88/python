@@ -9,6 +9,8 @@
 [Soket](https://guohong88.github.io/python/python_HighLevel/html/Soket/)   
 
 # pythonWwb
+[4-vue](https://guohong88.github.io/python/pythonWeb/4-vue/index.html)
+[5-vue组件](https://guohong88.github.io/python/pythonWeb/8-vue组件/index.html)   
 [10-项目部署](https://guohong88.github.io/python/pythonWeb/10-项目部署/部署课程[ubuntu].doc)       
 [11_flask](https://guohong88.github.io/python/pythonWeb/11-flask/index.html)    
 # 数据结构
